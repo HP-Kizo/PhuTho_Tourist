@@ -1,0 +1,41 @@
+.header {
+  height: 120px;
+  background-color: #002f5ccc;
+  border-bottom: 1px solid hsl(0, 0%, 100%);
+}
+
+.navbar {
+  width: 870px;
+  padding: 20px 0px;
+  margin: 0 auto;
+}
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  list-style: none;
+}
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Philosopher", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  padding: 4px;
+}
+.nav-item a:hover {
+  color: #9ff;
+  border-bottom: 1px solid #9ff;
+}

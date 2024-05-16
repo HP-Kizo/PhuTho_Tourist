@@ -1,0 +1,30 @@
+.carousel {
+  display: flex;
+  width: 1200px;
+  height: 532px;
+  flex-shrink: 0;
+  background-color: blueviolet;
+}
+
+.carousel-slide {
+  flex: 1;
+  min-width: 20%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
