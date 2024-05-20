@@ -1,17 +1,21 @@
 import React from "react";
-import { Logo } from "../../assets/Logo";
+import { Logo } from "../../assets/Icon";
 import "./Header.css";
+import { useParams } from "react-router-dom";
 
 const Header: React.FC = () => {
+  const params = useParams();
+  console.log(params);
+
   return (
     <header className="header">
       <nav className="navbar">
         <ul className="nav-list">
-          <li className="nav-item">
+          <li className="nav-item active">
             <a href="/">Trang Chủ</a>
           </li>
           <li className="nav-item">
-            <a href="/posts">Bài Viết</a>
+            <a href="/blogs">Bài Viết</a>
           </li>
           <li className="nav-item">{Logo}</li>
           <li className="nav-item">

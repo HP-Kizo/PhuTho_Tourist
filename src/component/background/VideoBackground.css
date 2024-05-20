@@ -24,7 +24,7 @@
   align-items: center;
   gap: 24px;
 }
-.header-section .header-text {
+.main-content .header-section .header-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,8 +39,8 @@
 .header-section .header-text .company-name {
   color: #fff;
   text-align: center;
-  /* leading-trim: both;
-  text-edge: cap; */
+  leading-trim: both;
+  text-edge: cap;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   font-family: "Philosopher", sans-serif;
   font-size: 30px;
@@ -49,8 +49,8 @@
 }
 .header-section .header-text .company-short-name {
   color: #9ff;
-  /* leading-trim: both;
-  text-edge: cap; */
+  leading-trim: both;
+  text-edge: cap;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   font-family: "Helvetica Neue", sans-serif;
   font-size: 44px;
@@ -60,8 +60,8 @@
 }
 .main-content .header-section .subtitle {
   color: #fff;
-  /* leading-trim: both;
-  text-edge: cap; */
+  leading-trim: both;
+  text-edge: cap;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 24px;
   font-style: italic;

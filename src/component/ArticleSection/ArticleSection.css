@@ -1,0 +1,166 @@
+.article {
+  display: flex;
+  max-width: 1920px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 48px;
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wrap__polygon {
+  position: relative;
+  width: 378px;
+  height: 98px;
+}
+
+.polygon {
+  transform: rotate(90deg);
+  flex-shrink: 0;
+  fill: rgba(255, 255, 255, 0.7);
+  stroke-width: 2px;
+  stroke: var(--white, #fff);
+  box-shadow: 5px 5px 16px 0px rgba(255, 255, 255, 0.25) inset;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(2px);
+}
+.polygon__title {
+  color: var(--blue-primary-500);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Philosopher;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; /* 200% */
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrap__article {
+  display: flex;
+  gap: 24px;
+  width: 1520px;
+}
+.article-section {
+  overflow: hidden;
+  width: 1134px;
+  height: 604px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(7.5px);
+}
+.slider__main {
+  width: 1134px;
+  height: 218px;
+  flex-shrink: 0;
+  background: #fff;
+  position: relative;
+}
+.slider__content {
+  display: flex;
+  width: 845px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding-top: 24px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+.slider__image {
+  border: 0;
+}
+.slider__content .slider__content-title {
+  align-self: stretch;
+  color: var(--blue-primary-500);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "Philosopher";
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 34px;
+}
+.slider__content .slider__content-description {
+  align-self: stretch;
+  height: 82px;
+  overflow: hidden;
+  color: var(--gray-gray-600);
+  text-overflow: ellipsis;
+
+  /* Roboto/18px: Regular */
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.slider__controls {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 4px;
+  position: absolute;
+  top: 19px;
+  right: 24px;
+}
+.slider__controls button {
+  border: 0;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+}
+.slider__controls button:hover {
+  cursor: pointer;
+}
+.slider__icons {
+  width: 100px;
+  height: 16px;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+}
+.slider__icons button {
+  border: 0;
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+}
+.active__icon {
+  transform: translateX(-6px);
+}
+.inActive__icon {
+  fill: rgba(255, 255, 255, 0.3);
+  stroke-width: 1px;
+  stroke: var(--blue-primary-500, #0054a6);
+  backdrop-filter: blur(15px);
+}
+
+.aside__section {
+  width: 362px;
+  height: 603px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+
+  /* shadow bai moi */
+  box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(7.5px);
+}
+
+.aside__title {
+  color: var(--blue-primary-500);
+
+  /* Roboto/24px: Bold */
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-left: 24px;
+  margin-top: 24px;
+}

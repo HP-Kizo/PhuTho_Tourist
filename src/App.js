@@ -3,6 +3,7 @@ import "./App.css";
 import "./Reset.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home.tsx";
+import Blogs from "./pages/blogs/Blogs";
 
 function App() {
   return (
@@ -10,8 +11,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="blogs" element={<Blogs />} />
-            <Route path="contact" element={<Contact />} />
+          <Route path="/blogs" element={<Blogs />} />
+          {/*  <Route path="contact" element={<Contact />} />
             <Route path="*" element={<NoPage />} /> */}
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,67 @@
+.services {
+  margin: 0 auto;
+  display: flex;
+  max-width: 1520px;
+  padding: 40px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.services .services__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 862px;
+  height: 129px;
+}
+
+.services__header .services__title {
+  color: var(--gray-gray-600);
+  text-align: center;
+
+  /* Roboto/20px: Medium */
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.services__header .services__main-title {
+  color: var(--blue-primary-600, #003f7d);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Philosopher;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 29px;
+}
+.services__header .services__description {
+  color: var(--gray-gray-600);
+
+  /* Roboto/20px: Regular */
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.services__main-title-underline {
+  width: 220px;
+  height: 6px;
+  border-radius: 100px;
+  background: var(--blue-primary-600);
+}
+.services .services__content {
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 1134px;
+  height: 359px;
+}

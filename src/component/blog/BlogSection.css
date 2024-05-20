@@ -1,0 +1,82 @@
+.blog-section {
+  height: 892px;
+  background: rgba(78, 149, 219, 0.7);
+  backdrop-filter: blur(7.5px);
+  width: 1520px;
+  margin: 0 auto;
+  text-align: center;
+}
+.blog-section__haeder {
+  margin-top: 40px;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  height: 129px;
+}
+.blog-section__title {
+  color: var(--white, #fff);
+  line-height: normal;
+  /* Roboto/20px: Medium */
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+.blog-section__main-heading {
+  color: var(--blue-primary-600);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "Philosopher", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+
+  line-height: 29px;
+}
+.blog-section__wrap {
+  display: flex;
+  justify-content: center;
+}
+.blog-section__main-heading-underline {
+  width: 130px;
+  height: 6px;
+  border-radius: 100px;
+  background: var(--blue-primary-600);
+}
+.blog-section__description {
+  color: var(--gray-gray-50);
+
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.blog-section__cards {
+  margin-top: 37px;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 1134px;
+  height: 542px;
+}
+.blog-section__footer {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blog-section__button {
+  background: var(--blue-primary-500);
+  border: 0;
+  color: #fff;
+  /* Roboto/18px: Medium */
+  font-family: Roboto;
+  font-size: 18px;
+  height: 44px;
+  border-radius: 6px;
+  font-weight: 600;
+  padding: 0px 28px;
+}
+
+.blog-section__button:hover {
+  cursor: pointer;
+}

@@ -5,13 +5,21 @@ import "./Home.css";
 import VideoBackground from "../../component/background/VideoBackground";
 import AboutUs from "../../component/aboutUs/AboutUs";
 import BlogSection from "../../component/blog/BlogSection";
+import Services from "../../component/services/Services";
+import Footer from "../../component/footer/Footer";
+import { ButtonDown } from "../../assets/Icon";
+import MainHeaderHome from "../../component/MainHeaderHome/MainHeaderHome";
 const Home: React.FC = () => {
   return (
     <>
       <Header></Header>
-      <VideoBackground></VideoBackground>
+      <VideoBackground>
+        <MainHeaderHome></MainHeaderHome>
+      </VideoBackground>
       <AboutUs></AboutUs>
       <BlogSection />
+      <Services />
+      <Footer />
     </>
   );
 };

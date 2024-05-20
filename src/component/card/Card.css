@@ -1,0 +1,102 @@
+.card {
+  width: 362px;
+  height: 542px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.card .card__image {
+  width: 362px;
+  height: 197px;
+  flex-shrink: 0;
+}
+.card .card__content {
+  display: flex;
+  width: 330px;
+  height: 293px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  margin: 21px 16px 28px 16px;
+}
+.card .card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.card__position {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.card__author {
+  color: var(--gray-gray-400);
+
+  /* Roboto/18px: Regular */
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.card__header .card__title {
+  width: 330px;
+  color: var(--blue-primary-500);
+  text-align: start;
+  /* Roboto/20px: Bold */
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.card__header .card__description {
+  width: 330px;
+  color: var(--gray-gray-500);
+  text-align: start;
+
+  /* Roboto/16px: Regular */
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+}
+.card .card__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.card__footer .card__tags {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.card__footer .card__tags .card__tag {
+  color: var(--blue-primary-500);
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+.card__footer .card__info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-gray-400, #858585);
+}
+.card__footer .card__info span:first-child,
+.card__footer .card__info span:nth-child(3) {
+  /* Roboto/16px: Regular */
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 21px; /* 131.25% */
+}
+
+.card__footer .card__info span:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

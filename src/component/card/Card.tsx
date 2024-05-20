@@ -1,5 +1,7 @@
 import React from "react";
 import "./Card.css";
+import { ElipseOn } from "../../assets/Icon";
+import { ElipseOff } from "../../assets/Icon";
 
 interface CardProps {
   image: string;
@@ -7,7 +9,6 @@ interface CardProps {
   description: string;
   author: string;
   date: string;
-  tags: string[];
   views: string;
 }
 
@@ -17,7 +18,6 @@ const Card: React.FC<CardProps> = ({
   description,
   author,
   date,
-  tags,
   views,
 }) => {
   return (
@@ -25,21 +25,23 @@ const Card: React.FC<CardProps> = ({
       <img src={image} alt={title} className="card__image" />
       <div className="card__content">
         <div className="card__header">
-          <span className="card__author">{author}</span>
-          <span className="card__status">•</span>
+          <div className="card__position">
+            <span className="card__author">{author}</span>
+            {ElipseOn}
+          </div>
+          <h3 className="card__title">{title}</h3>
+          <p className="card__description">{description}</p>
         </div>
-        <h3 className="card__title">{title}</h3>
-        <p className="card__description">{description}</p>
+
         <div className="card__footer">
           <div className="card__tags">
-            {tags.map((tag) => (
-              <span key={tag} className="card__tag">
-                {tag}
-              </span>
-            ))}
+            <button className="btn card__tag">Sự kiện</button>
+            <button className="btn card__tag">Thông báo</button>
+            <button className="btn card__tag">Tin tức</button>
           </div>
           <div className="card__info">
             <span className="card__views">{views} lượt xem</span>
+            <span className="card__elipse">{ElipseOff}</span>
             <span className="card__date">{date}</span>
           </div>
         </div>

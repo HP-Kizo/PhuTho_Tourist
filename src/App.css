@@ -2,3 +2,27 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  /* Colors */
+  --gray-gray-700: #333;
+  --gray-gray-600: #4d4d4d;
+  --gray-gray-500: #666;
+  --gray-gray-400: #858585;
+  --gray-gray-50: #f0f0f0;
+  --blue-primary-600: #003f7d;
+  --blue-primary-500: #0054a6;
+  --blue-primary-50: #e6eef7;
+  --blue-primary-300: #6698ca;
+}
+.btn {
+  display: flex;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 46px;
+  border: 0;
+  background: var(--blue-primary-50);
+}
+.btn:hover {
+  cursor: pointer;
+}

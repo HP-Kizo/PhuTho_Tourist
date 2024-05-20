@@ -26,7 +26,7 @@
 }
 .about-us--main {
   width: 675px;
-  color: var(--gray-gray-700, #333);
+  color: var(--gray-gray-700);
 
   /* Roboto/20px: Regular */
   font-family: Roboto;
@@ -35,7 +35,7 @@
 }
 
 .section-title {
-  color: var(--gray-gray-600, #4d4d4d);
+  color: var(--gray-gray-600);
   text-align: center;
 
   /* Roboto/20px: Medium */
@@ -47,7 +47,7 @@
 }
 
 .main-heading {
-  color: var(--blue-primary-600, #003f7d);
+  color: var(--blue-primary-600);
   leading-trim: both;
   text-edge: cap;
   font-family: Philosopher;
