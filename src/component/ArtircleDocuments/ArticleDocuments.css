@@ -1,0 +1,12 @@
+.wrap__document-card {
+  display: flex;
+  width: 774.333px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 22.111px;
+  flex-wrap: wrap;
+}
+
+.wrap__document-card:nth-child(n+4){
+  margin-top: 22px;
+}

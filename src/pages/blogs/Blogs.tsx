@@ -7,6 +7,7 @@ import VideoBackground from "../../component/background/VideoBackground";
 import Footer from "../../component/footer/Footer";
 import ArticleSection from "../../component/ArticleSection/ArticleSection";
 import Topics from "../../component/Topics/Topics";
+import MainBlogs from "../../component/MainBlogs/MainBlogs";
 const Blogs: React.FC = () => {
   return (
     <>
@@ -15,7 +16,8 @@ const Blogs: React.FC = () => {
         <ArticleSection />
         <Topics />
       </VideoBackground>
-      {/* <Footer /> */}
+      <div className="__blogs-distance"></div>
+      <Footer />
     </>
   );
 };

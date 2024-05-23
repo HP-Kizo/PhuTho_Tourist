@@ -1,0 +1,320 @@
+.document-table {
+  width: 1234px;
+  height: 807px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(7.5px);
+  margin: 70px auto 0px auto;
+}
+.wrap__document-table {
+  padding: 48px 54px;
+}
+.document-table__header {
+  width: 1125px;
+  height: 69px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.document-table__date {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.document-table__date label,
+.document-table__search label {
+  color: var(--blue-primary-500);
+
+  /* Roboto/18px: Medium */
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+}
+.document-table__datePicker {
+  display: flex;
+  width: 322px;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+}
+.document-table__datePicker span {
+  width: 6px;
+  height: 8px;
+  flex-shrink: 0;
+  fill: var(--blue-primary-500);
+}
+.document-table__datePicker-left,
+.document-table__datePicker-right {
+  display: flex;
+  width: 126px;
+  padding: 8px 12px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+.document-table__datePicker-left input,
+.document-table__datePicker-right input {
+  color: var(--gray-gray-400, #858585);
+
+  /* Roboto/16px: Regular */
+  font-family: Roboto;
+  font-size: 16px;
+  width: 86px;
+  height: 21px;
+  border: none;
+  outline: none;
+  line-height: 21px; /* 131.25% */
+}
+::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.document-table__datePicker-left svg:hover,
+.document-table__datePicker-right svg:hover {
+  cursor: pointer;
+}
+
+.document-table__search {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.document-table__search-wrap {
+  display: flex;
+  width: 286px;
+  height: 40px;
+  padding: 10px 16px 10px 12px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+.document-table__search-wrap div {
+  display: flex;
+  padding-right: 12px;
+  align-items: flex-start;
+  gap: 10px;
+}
+.document-table__search-wrap input {
+  color: var(--gray-gray-300);
+  border: none;
+  outline: none;
+  /* Roboto/16px: Regular */
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 21px; /* 131.25% */
+}
+.search__delete {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+}
+.search__delete span {
+  font-family: Roboto;
+  color: var(--gray-gray-300);
+
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  stroke-width: 1.5px;
+  stroke: var(--gray-gray-500);
+}
+.document-table__table {
+  display: flex;
+  flex-direction: column;
+  width: 1126px;
+  align-items: flex-start;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.document-table__table thead tr {
+  border-radius: 8px;
+  background: var(--blue-primary-500);
+  overflow: hidden;
+}
+.document-table__table th {
+  color: var(--white, #fff);
+
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+}
+.document-table__table tr {
+  display: flex;
+  width: 100%;
+}
+.document-table__table th,
+.document-table__table td {
+  display: flex;
+  height: 21px;
+  align-items: center;
+  align-self: stretch;
+}
+.document-table__tbody {
+  display: flex;
+  flex-direction: column;
+}
+.document-table__tbody tr {
+  background: var(--blue-primary-50);
+  margin-top: 11px;
+}
+.document-table__tbody td {
+  color: var(--gray-gray-600);
+
+  /* Roboto/16px: Regular */
+  font-family: Roboto;
+  font-size: 16px;
+
+  line-height: 21px;
+}
+
+.document-table__table th:nth-child(1),
+.document-table__table td:nth-child(1) {
+  padding: 12px 24px 11px 24px;
+  width: 34px;
+}
+
+.document-table__table th:nth-child(2),
+.document-table__table td:nth-child(2) {
+  width: 508px;
+  padding: 12px 24px 11px 24px;
+}
+.document-table__table th:nth-child(2) {
+  padding: 12px 8px 11px 24px;
+}
+.document-table__table td:nth-child(2) {
+  width: 492px;
+}
+
+.document-table__table th:nth-child(3),
+.document-table__table td:nth-child(3) {
+  width: 322px;
+  padding: 12px 16px 11px 16px;
+}
+
+.document-table__table th:nth-child(4),
+.document-table__table td:nth-child(4) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 134px;
+  padding: 12px 8px 11px 8px;
+}
+.document-table__download-btn {
+  display: flex;
+  height: 44px;
+  padding: 12px 8px 11px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+.document-table__download-btn:hover {
+  cursor: pointer;
+}
+.document-table__footer {
+  display: flex;
+  width: 1125px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+}
+.document-table__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.document-table__left span {
+  color: var(--gray-gray-600);
+  text-align: center;
+
+  /* Roboto/16px: Regular */
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 21px; /* 131.25% */
+}
+.document-table__left div {
+  display: flex;
+  width: 10px;
+  height: 26px;
+  padding: 3px 13px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--blue-primary-500);
+}
+.document-table__left p {
+  width: 19px;
+  color: var(--blue-primary-500);
+  text-align: center;
+
+  /* Open Sans/16px/16px: Bold */
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+}
+.document-table__pagination {
+  display: flex;
+  width: 275px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+.document-table__pagination button svg {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.document-table__numberPage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pagination-btn {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray-gray-600);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19px;
+}
+.pagination-btn:nth-child(1) {
+  border-radius: 4px;
+  background: var(--blue-primary-500);
+  color: #fff;
+}
+.document-table__pagination div {
+  border: none;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  padding: 6px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}

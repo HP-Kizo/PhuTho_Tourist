@@ -2,10 +2,12 @@
   background: rgba(0, 37, 73, 0.8);
   margin-top: 80px;
   height: 210px;
-  padding: 28px 199px 38px 226px;
-
+  padding: 28px 0px 38px 27px;
   border-top: 1px solid #fff;
   backdrop-filter: blur(7.5px);
+  display: flex;
+
+  justify-content: center;
 }
 .footer__wrap {
   width: 1495px;

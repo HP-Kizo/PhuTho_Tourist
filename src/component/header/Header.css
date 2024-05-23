@@ -39,7 +39,7 @@
   color: #9ff;
   border-bottom: 1px solid #9ff;
 }
-.nav-list .active a {
+.nav-item .active {
   color: #9ff;
   border-bottom: 1px solid #9ff;
 }
