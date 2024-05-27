@@ -1,0 +1,67 @@
+.wrap__filterCareers {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  width: 322px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.field__header {
+  display: flex;
+  width: 314px;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+}
+.field__header svg {
+  display: flex;
+  width: 20px;
+  height: 20.5px;
+  padding: 2px 2.003px 1.539px 2px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.field__title {
+  color: var(--blue-primary-500);
+
+  /* Roboto/20px: Bold */
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23px;
+}
+.field__list {
+  width: 324px;
+  display: flex;
+  padding-right: 32px;
+  justify-content: start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px;
+}
+.field__item {
+  display: flex;
+  height: 40px;
+  padding: 0px 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 99px;
+  background: #fff;
+  color: var(--gray-gray-600);
+  /* Roboto/14px: Regular */
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 16px;
+}
+.field__item-active {
+  color: #fff;
+  font-weight: 600;
+  background: var(--blue-primary-500);
+}

@@ -1,0 +1,105 @@
+.careers__component {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1920px;
+  margin: 0px auto;
+}
+.wrap__careers {
+  z-index: 3;
+  position: absolute;
+  top: 168px;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 2px 32px 0px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(7.5px);
+  width: 1166px;
+  padding: 50px 177px 42px 177px;
+}
+.careers__detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+.careers__header {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  height: 100px;
+}
+.careers__header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.careers__header-content h1 {
+  color: var(--blue-primary-600);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Roboto;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; /* 222.222% */
+}
+.careers__header-content p {
+  color: var(--blue-primary-400);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+.careers__header-position {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 304px;
+  height: 24px;
+}
+.careers__header-position div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.careers__header-position span {
+  color: var(--gray-gray-500, #666);
+
+  /* Roboto/18px: Medium */
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+}
+.careers__status {
+  width: 92px;
+  height: 21px;
+  display: inline-flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 88.611px;
+  background: var(--green-green-50);
+}
+.expired {
+  background: #f7e6e6;
+}
+.careers__status p {
+  color: var(--green-green-500);
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+}
+.expired p {
+  color: #ff3939;
+}
