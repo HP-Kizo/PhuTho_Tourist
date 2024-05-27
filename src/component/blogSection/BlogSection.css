@@ -78,5 +78,6 @@
 }
 
 .blog-section__button:hover {
+  background: var(--blue-primary-400);
   cursor: pointer;
 }

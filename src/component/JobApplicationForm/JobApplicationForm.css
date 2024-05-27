@@ -1,0 +1,230 @@
+.wrap__JobApp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 32px;
+}
+.form-title {
+  color: var(--blue-primary-500, #0054a6);
+
+  /* Roboto/24px: Medium */
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+.form-job {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+.form__section-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+.form__section-left,
+.form__section-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.form__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.form__label {
+  color: var(--gray-gray-600);
+
+  /* Roboto/18px: Medium */
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+}
+.form__input {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: #fff;
+  border: none;
+  outline: none;
+  color: var(--gray-gray-300);
+
+  /* Roboto/16px: Regular */
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 21px; /* 131.25% */
+}
+#fullName {
+  width: 100px;
+  padding: 10px 321px 9px 16px;
+}
+#birthDate {
+  width: 81px;
+  padding: 10px 340px 9px 16px;
+}
+#currentAddress {
+  padding: 10px 136px 9px 16px;
+  width: 285px;
+}
+#email {
+  padding: 10px 243px 9px 16px;
+  width: 178px;
+}
+#education {
+  padding: 10px 367px 9px 16px;
+  width: 54px;
+}
+.form__radio-group {
+  display: flex;
+  height: 36px;
+  padding-right: 12px;
+  align-items: flex-start;
+  gap: 28px;
+  flex-shrink: 0;
+}
+.form__radio-group div {
+  display: flex;
+  height: 27px;
+  padding: 5px 10px 4px 0px;
+  align-items: center;
+  gap: 16px;
+}
+.form__radio-group label {
+  color: var(--gray-gray-600);
+
+  /* Roboto/18px: Regular */
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 27px; /* 27px */
+}
+.form__radio-group input {
+  border: 1px solid var(--blue-primary-500);
+  background: var(--white, #fff);
+}
+#birthPlace {
+  padding: 10px 176px 9px 16px;
+  width: 245px;
+}
+
+.numberPrefix {
+  display: flex;
+  height: 32px;
+  width: 50px;
+  padding: 4px 12px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: #fff;
+}
+.flag {
+  width: 18px;
+  height: 18px;
+  background: url(https://www.figma.com/file/V1jfJlagJd7Ufsl4wRs43c/image/faa9d419a31679c6fb9dd70a2c295bdd71f17bac)
+    transparent -1.647px -1.647px / 118.301% 118.301% no-repeat;
+}
+.numberPrefix span {
+  color: var(--gray-gray-500, #666);
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px; /* 225% */
+}
+#phone {
+  padding: 10px 241px 9px 16px;
+  width: 90px;
+}
+.phoneNumber {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+#facebook {
+  padding: 10px 297px 9px 16px;
+  width: 124px;
+}
+#cv {
+  display: flex;
+  display: none;
+}
+.custom-file-upload:hover {
+  cursor: pointer;
+}
+.file-upload__file-name {
+  color: var(--gray-gray-300);
+
+  /* Roboto/16px: Regular */
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 131.25% */
+}
+.wrap_fileName {
+  display: flex;
+  padding: 10px 10px 6px 16px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 160px;
+}
+.form__radio-group .form__radio-group-1 {
+  padding: 5px 27px 4px 0px;
+}
+.form__radio-group .form__radio-group-2 {
+  padding: 5px 14px 4px 0px;
+}
+.form__radio-group .form__radio-group-3 {
+  padding: 5px 0px 4px 0px;
+}
+#workHistory,
+#personalExperience {
+  border: none;
+  outline: none;
+  display: flex;
+  width: 928px;
+  height: 131px;
+  padding: 10px 16px 10px 16px;
+  align-items: center;
+  color: var(--gray-gray-300);
+
+  /* Roboto/16px: Regular */
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 21px; /* 131.25% */
+}
+.form__button {
+  display: flex;
+  height: 44px;
+  padding: 0px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  background: var(--blue-primary-500);
+  color: #fff;
+
+  /* Roboto/18px: Medium */
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21px;
+  border: none;
+}
+.form__button:hover {
+  cursor: pointer;
+}
+.wrap-button {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}

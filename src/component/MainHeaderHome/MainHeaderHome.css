@@ -1,0 +1,15 @@
+.main-content {
+  z-index: 2;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  height: 690px;
+  top: 168px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+}
+.button-down:hover {
+  cursor: pointer;
+}

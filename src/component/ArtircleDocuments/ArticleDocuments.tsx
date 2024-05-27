@@ -10,7 +10,13 @@ import {
 } from "../../assets/Icon";
 import DocumentCard from "../DocumentCard/DocumentCard";
 
-const ArticleDocuments: React.FC = () => {
+interface scrollToDocumentTableProps {
+  scrollToDocumentTable: () => void;
+}
+
+const ArticleDocuments: React.FC<scrollToDocumentTableProps> = ({
+  scrollToDocumentTable,
+}) => {
   interface Document {
     id: number;
     title: string;
@@ -78,7 +84,7 @@ const ArticleDocuments: React.FC = () => {
   ];
 
   return (
-    <article className="article">
+    <article className="article__document">
       <div className="wrap__polygon">
         {Polygon}
         <h1 className="polygon__title">TÀI LIỆU</h1>
@@ -88,7 +94,9 @@ const ArticleDocuments: React.FC = () => {
           <DocumentCard key={document.id} document={document} />
         ))}
       </div>
-      {ButtonDown}
+      <div className="button-down" onClick={scrollToDocumentTable}>
+        {ButtonDown}
+      </div>
     </article>
   );
 };

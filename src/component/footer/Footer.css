@@ -1,4 +1,5 @@
 .footer {
+  width: 100%;
   background: rgba(0, 37, 73, 0.8);
   margin-top: 80px;
   height: 210px;
@@ -6,8 +7,8 @@
   border-top: 1px solid #fff;
   backdrop-filter: blur(7.5px);
   display: flex;
-
   justify-content: center;
+  z-index: 5;
 }
 .footer__wrap {
   width: 1495px;

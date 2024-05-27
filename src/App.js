@@ -6,6 +6,7 @@ import Home from "./pages/home/Home.tsx";
 import Blogs from "./pages/blogs/Blogs";
 import Documents from "./pages/documents/Documents";
 import Posts from "./component/posts/Posts";
+import Careers from "./pages/careers/Careers";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/documents" element={<Documents />} />
         <Route path="/documents/:id" element={<Posts />} />
 
-        {/*    <Route path="*" element={<NoPage />} /> */}
+        <Route path="/careers" element={<Careers />} />
       </Routes>
     </BrowserRouter>
   );

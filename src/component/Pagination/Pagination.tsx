@@ -1,6 +1,7 @@
 // src/Pagination.tsx
 import React from "react";
 import "./Pagination.css";
+import { NextIconSmall, PrevIconSmall } from "../../assets/Icon";
 
 interface PaginationProps {
   totalArticles: number;
@@ -23,15 +24,23 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <div className="pagination">
-      {pageNumbers.map((number) => (
-        <button
-          key={number}
-          // onClick={() => onPageChange(number)}
-          className={number === currentPage ? "active" : ""}
-        >
-          {number}
-        </button>
-      ))}
+      <div className="pagination__prev-icon">{PrevIconSmall}</div>
+      <div className="pagination__page">
+        {pageNumbers.map((number) => (
+          <button
+            key={number}
+            // onClick={() => onPageChange(number)}
+            className={
+              number === currentPage
+                ? "active pagination__numberPage"
+                : "pagination__numberPage"
+            }
+          >
+            {number}
+          </button>
+        ))}
+      </div>
+      <div className="pagination__next-icon">{NextIconSmall}</div>
     </div>
   );
 };

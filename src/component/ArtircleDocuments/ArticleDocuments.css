@@ -1,4 +1,33 @@
+.article__document {
+  display: flex;
+  max-width: 1920px;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+  top: 168px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.article__document .wrap__polygon {
+  background: transparent;
+}
+.polygon__title {
+  background-color: transparent;
+}
+.article__document .wrap__polygon svg {
+  fill: rgba(255, 255, 255, 0.7);
+  stroke-width: 2px;
+  stroke: var(--white, #fff);
+  box-shadow: 5px 5px 16px 0px rgba(255, 255, 255, 0.25) inset;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(2px);
+}
 .wrap__document-card {
+  margin-top: 48px;
+  margin-bottom: 36px;
   display: flex;
   width: 774.333px;
   justify-content: center;
@@ -7,6 +36,6 @@
   flex-wrap: wrap;
 }
 
-.wrap__document-card:nth-child(n+4){
+.wrap__document-card:nth-child(n + 4) {
   margin-top: 22px;
 }

@@ -1,3 +1,16 @@
-.__blogs-distance {
-  height: 860px;
+.blogs {
+  position: relative;
+  max-width: 1920px;
+  margin: 0px auto;
+}
+.wrap__blogs- {
+  z-index: 2;
+  position: absolute;
+  top: 168px;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

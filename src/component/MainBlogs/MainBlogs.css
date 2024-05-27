@@ -1,3 +1,9 @@
+.main__blogs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .main__blogs-content {
   display: inline-flex;
   flex-direction: column;

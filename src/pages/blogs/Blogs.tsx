@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect, useRef, useState } from "react";
+
 import "./Blogs.css";
 import Header from "../../component/header/Header";
 import Carousel from "../../component/carousel/Carousel";
@@ -9,16 +11,22 @@ import ArticleSection from "../../component/ArticleSection/ArticleSection";
 import Topics from "../../component/Topics/Topics";
 import MainBlogs from "../../component/MainBlogs/MainBlogs";
 const Blogs: React.FC = () => {
+  const [blogsHeight, setBlogsHeight] = useState<number>(0);
+  const blogsRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (blogsRef.current) {
+      setBlogsHeight(blogsRef.current.clientHeight + 48 - 866);
+    }
+  }, []);
   return (
-    <>
+    <div className="blogs">
       <Header></Header>
-      <VideoBackground>
+      <div className="wrap__blogs-" ref={blogsRef}>
         <ArticleSection />
         <Topics />
-      </VideoBackground>
-      <div className="__blogs-distance"></div>
-      <Footer />
-    </>
+        <Footer />
+      </div>
+    </div>
   );
 };
 

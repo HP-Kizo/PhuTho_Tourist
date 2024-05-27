@@ -1,8 +1,11 @@
 import React from "react";
 import { ButtonDown } from "../../assets/Icon";
 import Carousel from "../carousel/Carousel";
-
-const MainHeaderHome: React.FC = () => {
+import "./MainHeaderHome.css";
+interface MainHeaderHomeProps {
+  scrollToAboutUs: () => void;
+}
+const MainHeaderHome: React.FC<MainHeaderHomeProps> = ({ scrollToAboutUs }) => {
   return (
     <main className="main-content">
       <section className="header-section">
@@ -15,7 +18,9 @@ const MainHeaderHome: React.FC = () => {
         <p className="subtitle">Ngày thành lập 01/01/2019</p>
       </section>
       <Carousel />
-      <div className="button-down">{ButtonDown}</div>
+      <div className="button-down" onClick={scrollToAboutUs}>
+        {ButtonDown}
+      </div>
     </main>
   );
 };

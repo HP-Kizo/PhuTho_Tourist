@@ -80,6 +80,12 @@
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 600;
+  border: 1px solid transparent;
+}
+.card__footer .card__tags .card__tag:hover {
+  border: 1px solid var(--blue-primary-500);
+  color: var(--blue-primary-500);
+  background: #fff;
 }
 .card__footer .card__info {
   display: flex;

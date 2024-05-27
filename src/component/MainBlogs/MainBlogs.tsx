@@ -33,7 +33,7 @@ const MainBlogs: React.FC<BlogListProps> = ({ blogs }) => {
         </div>
       </div>
       <Pagination
-        totalArticles={15}
+        totalArticles={48}
         articlesPerPage={12}
         currentPage={1}
         // onPageChange

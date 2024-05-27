@@ -5,18 +5,20 @@
   justify-content: flex-end;
   align-items: center;
   gap: 48px;
-  position: absolute;
-  top: 48px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 .wrap__polygon {
   position: relative;
-  width: 378px;
+  width: 382px;
   height: 98px;
+  fill: rgba(255, 255, 255, 0.7);
+  stroke-width: 2px;
+  stroke: var(--white, #fff);
+  box-shadow: 5px 5px 16px 0px rgba(255, 255, 255, 0.25) inset;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(2px);
 }
 
-.polygon {
+.wrap__polygon .polygon {
   transform: rotate(90deg);
   flex-shrink: 0;
   fill: rgba(255, 255, 255, 0.7);
@@ -26,7 +28,7 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   backdrop-filter: blur(2px);
 }
-.polygon__title {
+.wrap__polygon .polygon__title {
   color: var(--blue-primary-500);
   text-align: center;
   leading-trim: both;
