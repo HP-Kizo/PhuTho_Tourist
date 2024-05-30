@@ -1,7 +1,5 @@
 .blog-card {
   display: flex;
-  width: 265px;
-  height: 282px;
   padding-bottom: 10px;
   flex-direction: column;
   align-items: center;

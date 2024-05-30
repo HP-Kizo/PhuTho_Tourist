@@ -141,7 +141,8 @@ const JobApplicationForm: React.FC = () => {
                 Bạn có sẵn sàng đi công tác dài ngày
               </label>
               <div className="form__radio-group">
-                <label>
+                <div>
+                  <label>Có</label>
                   <input
                     type="radio"
                     name="availability"
@@ -149,9 +150,9 @@ const JobApplicationForm: React.FC = () => {
                     checked={formData.availability === "Có"}
                     onChange={handleChange}
                   />
-                  Có
-                </label>
-                <label>
+                </div>
+                <div>
+                  <label>Tùy thời điểm</label>
                   <input
                     type="radio"
                     name="availability"
@@ -159,9 +160,9 @@ const JobApplicationForm: React.FC = () => {
                     checked={formData.availability === "Tùy thời điểm"}
                     onChange={handleChange}
                   />
-                  Tùy thời điểm
-                </label>
-                <label>
+                </div>
+                <div>
+                  <label>Không</label>
                   <input
                     type="radio"
                     name="availability"
@@ -169,8 +170,7 @@ const JobApplicationForm: React.FC = () => {
                     checked={formData.availability === "Không"}
                     onChange={handleChange}
                   />
-                  Không
-                </label>
+                </div>
               </div>
             </div>
           </div>

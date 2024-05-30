@@ -48,8 +48,8 @@
 }
 .wrap__search {
   display: flex;
-  width: 282px;
-  height: 20px;
+  width: 100%;
+  height: 40px;
   padding: 10px 16px;
   justify-content: space-between;
   align-items: center;
@@ -93,8 +93,6 @@
   gap: 8px;
 }
 .search__soft {
-  width: 95px;
-  height: 24px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +119,7 @@
 }
 .headerSearchItem {
   display: flex;
-  width: 126px;
+  width: 150px;
   padding: 8px 12px;
   justify-content: space-between;
   align-items: center;

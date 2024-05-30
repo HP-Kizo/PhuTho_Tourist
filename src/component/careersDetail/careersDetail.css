@@ -7,6 +7,7 @@
   margin: 0px auto;
 }
 .wrap__careers {
+  max-width: 1520px;
   z-index: 3;
   position: absolute;
   top: 168px;
@@ -16,7 +17,6 @@
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 2px 32px 0px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(7.5px);
-  width: 1166px;
   padding: 50px 177px 42px 177px;
 }
 .careers__detail {
@@ -80,8 +80,6 @@
   line-height: 21px;
 }
 .careers__status {
-  width: 92px;
-  height: 21px;
   display: inline-flex;
   padding: 16px 24px;
   justify-content: center;

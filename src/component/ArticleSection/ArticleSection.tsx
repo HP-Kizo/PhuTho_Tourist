@@ -139,14 +139,14 @@ const ArticleSection: React.FC = () => {
       <div className="wrap__article">
         <div className="article-section">
           <div className="sliders">
-            <button
+            <div
               className="slider__image"
               style={{
                 width: "1134px",
                 height: "386px",
                 background: images[0].background,
               }}
-            ></button>
+            ></div>
             <div className="slider__main">
               <div className="slider__content">
                 <h2 className="slider__content-title">{images[0].title}</h2>

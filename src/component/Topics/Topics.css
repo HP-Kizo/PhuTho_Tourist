@@ -1,6 +1,5 @@
 .topic__wrap {
-  width: 1520px;
-  height: 1108px;
+  max-width: 1520px;
   margin: 0 auto;
   display: flex;
   gap: 24px;
@@ -40,7 +39,7 @@
 }
 .topic__nav .topic__item {
   display: flex;
-  width: 282px;
+  width: 100%;
   padding: 20px;
   align-items: center;
   gap: 12px;

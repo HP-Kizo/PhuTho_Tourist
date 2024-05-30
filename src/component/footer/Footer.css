@@ -2,8 +2,7 @@
   width: 100%;
   background: rgba(0, 37, 73, 0.8);
   margin-top: 80px;
-  height: 210px;
-  padding: 28px 0px 38px 27px;
+  padding: 28px 0px 38px 0px;
   border-top: 1px solid #fff;
   backdrop-filter: blur(7.5px);
   display: flex;
@@ -11,10 +10,8 @@
   z-index: 5;
 }
 .footer__wrap {
-  width: 1495px;
-  height: 210px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   gap: 138px;
 }

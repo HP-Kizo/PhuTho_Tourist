@@ -1,14 +1,12 @@
 .about-us {
-  width: 1520px;
-  height: 701px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  max-width: 1520px;
 }
 
 .about-us-content {
-  width: 694px;
   height: 535px;
   display: flex;
   flex-direction: column;
@@ -16,7 +14,6 @@
   margin: 83px 0px 83px 54px;
 }
 .about-us--header {
-  width: 666px;
   height: 139px;
   display: flex;
   flex-direction: column;

@@ -1,6 +1,7 @@
 .carousel {
 }
 .carousel__wrap {
+  margin: 0px auto;
   position: relative;
   width: 1200px;
   height: 531.658px;

@@ -37,7 +37,7 @@
   display: flex;
 }
 .job-details__label {
-  width: 146px;
+  width: 218px;
   display: flex;
   padding: 16px 36px;
   align-items: center;
@@ -51,7 +51,7 @@
   line-height: 36px; /* 200% */
 }
 .job-details__value {
-  width: 876px;
+  width: 948px;
   display: flex;
   padding: 16px 36px;
   align-items: center;

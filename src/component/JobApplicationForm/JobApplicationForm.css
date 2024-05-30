@@ -38,6 +38,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+  width: 437px;
 }
 .form__label {
   color: var(--gray-gray-600);
@@ -50,8 +51,10 @@
   line-height: 21px;
 }
 .form__input {
+  width: 100%;
   display: flex;
   align-items: center;
+  padding-left: 16px;
   border-radius: 8px;
   background: #fff;
   border: none;
@@ -63,7 +66,7 @@
   font-size: 16px;
   line-height: 21px; /* 131.25% */
 }
-#fullName {
+/* #fullName {
   width: 100px;
   padding: 10px 321px 9px 16px;
 }
@@ -82,7 +85,7 @@
 #education {
   padding: 10px 367px 9px 16px;
   width: 54px;
-}
+} */
 .form__radio-group {
   display: flex;
   height: 36px;
@@ -110,10 +113,10 @@
   border: 1px solid var(--blue-primary-500);
   background: var(--white, #fff);
 }
-#birthPlace {
+/* #birthPlace {
   padding: 10px 176px 9px 16px;
   width: 245px;
-}
+} */
 
 .numberPrefix {
   display: flex;
@@ -139,20 +142,20 @@
   font-weight: 500;
   line-height: 36px; /* 225% */
 }
-#phone {
+/* #phone {
   padding: 10px 241px 9px 16px;
   width: 90px;
-}
+} */
 .phoneNumber {
   display: flex;
   align-items: flex-start;
   gap: 16px;
   align-self: stretch;
 }
-#facebook {
+/* #facebook {
   padding: 10px 297px 9px 16px;
   width: 124px;
-}
+} */
 #cv {
   display: flex;
   display: none;

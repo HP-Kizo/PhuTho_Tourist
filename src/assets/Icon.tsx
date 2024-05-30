@@ -1202,3 +1202,69 @@ export const ClockS = (
     />
   </svg>
 );
+export const Menu = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M4 6H20M4 12H20M4 18H20"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
+export const LogoM = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="49"
+    height="34"
+    viewBox="0 0 49 32"
+    fill="none"
+  >
+    <path
+      d="M40.2028 16.0409C40.2028 24.5133 33.3345 31.3816 24.862 31.3816C16.3895 31.3816 9.52118 24.5133 9.52118 16.0409C9.52118 7.56838 16.3895 0.700073 24.862 0.700073C33.3345 0.700073 40.2028 7.56838 40.2028 16.0409Z"
+      fill="#0054A6"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M24.862 30.6922C32.9537 30.6922 39.5133 24.1326 39.5133 16.0409C39.5133 7.94916 32.9537 1.38955 24.862 1.38955C16.7703 1.38955 10.2107 7.94916 10.2107 16.0409C10.2107 24.1326 16.7703 30.6922 24.862 30.6922ZM24.862 31.3816C33.3345 31.3816 40.2028 24.5133 40.2028 16.0409C40.2028 7.56838 33.3345 0.700073 24.862 0.700073C16.3895 0.700073 9.52118 7.56838 9.52118 16.0409C9.52118 24.5133 16.3895 31.3816 24.862 31.3816Z"
+      fill="white"
+    />
+    <path
+      d="M17.9584 11.0551L0.700012 20.2596L15.4655 15.6574L31.3816 21.2184L48.8317 12.0139L33.8745 16.8079L17.9584 11.0551Z"
+      fill="white"
+      stroke="#0054A6"
+      stroke-width="0.344737"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
+export const XMark = (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="xmark-large">
+      <path
+        id="Icon"
+        d="M3.2857 3.28577L14.7143 14.7143M14.7143 3.28577L3.2857 14.7143"
+        stroke="#0054A6"
+        stroke-width="2.85714"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+  </svg>
+);

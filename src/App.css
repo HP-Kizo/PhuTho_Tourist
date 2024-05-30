@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 :root {
   /* Colors */
@@ -31,4 +32,7 @@
 }
 .btn:hover {
   cursor: pointer;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 576px) {
 }

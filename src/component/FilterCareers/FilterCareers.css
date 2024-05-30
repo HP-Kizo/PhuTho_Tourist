@@ -40,7 +40,6 @@
 .field__list {
   width: 324px;
   display: flex;
-  padding-right: 32px;
   justify-content: start;
   flex-wrap: wrap;
   align-items: flex-start;
