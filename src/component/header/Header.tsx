@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     dispatch(fetchBg());
   }, [dispatch]);
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

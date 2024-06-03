@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               <h2 className="footer__name">PHUTHOTOURIST</h2>
             </div>
           </div>
-          <div className="footer__info-bottom">
+          <div className="footer__info-bottom bottom-M">
             <p className="footer__copyright">Copyright</p>
             <span className="footer__logocopyright">{Copyright}</span>
             <p className="footer__name">
@@ -57,7 +57,8 @@ const Footer: React.FC = () => {
         </div>
         <div className="footer__links">
           <h2 className="footer__links-title">
-            CÁC ĐƠN VỊ CÙNG HỆ THỐNG PHUTHOTOURIST
+            CÁC ĐƠN VỊ{" "}
+            <span className="before-title">HỆ THỐNG PHUTHOTOURIST</span>
           </h2>
           <ul className="footer__links-list">
             <li className="footer__links-items">
@@ -101,6 +102,13 @@ const Footer: React.FC = () => {
               </div>
             </li>
           </ul>
+        </div>
+        <div className="footer__info-bottom bottom-S">
+          <span className="footer__logocopyright"></span>
+          <p className="bottom-S__name">
+            Copyright {Copyright} Công ty Cổ phần Dịch vụ Du lịch Phú Thọ
+          </p>
+          <p className=" bottom-S__company">(Phuthotourist)</p>
         </div>
       </div>
     </footer>

@@ -81,7 +81,7 @@ const Carousel = () => {
       <div className="carousel__wrap">
         {!loading &&
           initialImages.map((img, index) => (
-            <button
+            <div
               key={index}
               className="carousel__item"
               style={{
@@ -94,7 +94,7 @@ const Carousel = () => {
                 backgroundColor: img.backgroundColor,
                 transition: "background-image 0.5s ease-in-out",
               }}
-            ></button>
+            ></div>
           ))}
       </div>
     </div>

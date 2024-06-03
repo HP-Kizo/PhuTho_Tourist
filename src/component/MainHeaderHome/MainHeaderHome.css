@@ -1,5 +1,4 @@
 .main-content {
-  z-index: 2;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
@@ -12,4 +11,15 @@
 }
 .button-down:hover {
   cursor: pointer;
+}
+@media (max-width: 576px) {
+  .main-content {
+    top: 90px;
+  }
+  .header-text {
+    gap: 12px;
+  }
+  .header-section {
+    gap: 12px;
+  }
 }

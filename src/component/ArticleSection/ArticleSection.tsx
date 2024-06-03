@@ -142,8 +142,6 @@ const ArticleSection: React.FC = () => {
             <div
               className="slider__image"
               style={{
-                width: "1134px",
-                height: "386px",
                 background: images[0].background,
               }}
             ></div>

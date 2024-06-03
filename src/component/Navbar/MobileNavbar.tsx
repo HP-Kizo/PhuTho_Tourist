@@ -10,7 +10,7 @@ interface MobileNavbarProps {
 
 const MobileNavbar: React.FC<MobileNavbarProps> = ({ isOpen, toggleMenu }) => {
   return (
-    <nav className="navbar navbar__S">
+    <nav className="navbar__S">
       {!isOpen && (
         <ul className="nav-list">
           <li className="nav-item">{LogoM}</li>
