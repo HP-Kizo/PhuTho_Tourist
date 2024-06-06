@@ -13,12 +13,12 @@ import { Blog } from "../typescripts/Interface";
 export const fetchBlogs = (): AppThunk => async (dispatch) => {
   try {
     dispatch(fetchBlogsStart());
-    const dbRef = ref(db, "blogs");
+    const dbRef = ref(db, "dataBlogs");
     const snapshot = await get(dbRef);
     if (snapshot.exists()) {
-      const blogs = await Object.values(snapshot.val());
+      const dataBlogs = snapshot.val();
 
-      dispatch(fetchBlogsSuccess(blogs as Blog[]));
+      dispatch(fetchBlogsSuccess(dataBlogs));
     }
   } catch (error) {
     let errorMessage = "Unknown error";

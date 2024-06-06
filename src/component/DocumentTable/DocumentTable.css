@@ -168,6 +168,7 @@
   background: var(--blue-primary-50);
   margin-top: 8px;
 }
+
 .document-table__tbody td {
   color: var(--gray-gray-600);
 
@@ -313,4 +314,17 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+}
+
+.search__delete svg {
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  flex-shrink: 0;
+  stroke-width: 1.5px;
+  stroke: var(--gray-gray-500);
+  fill: var(--gray-gray-500);
+}
+.search__delete:hover {
+  cursor: pointer;
 }

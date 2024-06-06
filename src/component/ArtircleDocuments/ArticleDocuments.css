@@ -1,9 +1,9 @@
 .article__document {
   display: flex;
-  max-width: 1920px;
+  width: 775px;
+  overflow: hidden;
   justify-content: flex-end;
   flex-direction: column;
-
   align-items: center;
   position: absolute;
   top: 168px;
@@ -36,4 +36,22 @@
 
 .wrap__document-card:nth-child(n + 4) {
   margin-top: 22px;
+}
+@media only screen and (max-width: 818px) {
+  .article__document {
+    width: 100%;
+  }
+  .wrap__document-card {
+    max-height: 545px;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 605px) {
+  .wrap__document-card {
+    max-height: 330px;
+    width: 100%;
+    overflow: hidden;
+  }
 }

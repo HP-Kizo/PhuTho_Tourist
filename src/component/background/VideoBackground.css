@@ -23,7 +23,6 @@
 }
 .button-down {
   width: 23px;
-  height: 20px;
   flex-shrink: 0;
   padding: 9px 16px;
 }
@@ -59,6 +58,4 @@
   font-weight: 400;
   line-height: 36px; /* 150% */
   text-align: center;
-}
-@media only screen and (max-width: 900px) {
 }

@@ -1,5 +1,6 @@
 .topic__wrap {
   max-width: 1520px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   gap: 24px;
@@ -7,7 +8,7 @@
 }
 .topic-left {
   width: 362px;
-  height: 1028px;
+  height: 1033px;
   flex-shrink: 0;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.7);
@@ -69,4 +70,15 @@
   font-family: Roboto;
   font-size: 20px;
   font-weight: 700;
+}
+.topic__item:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 1248px) {
+  .topic__wrap {
+    width: 90vw;
+  }
+  .topic-left {
+    display: none;
+  }
 }

@@ -62,7 +62,6 @@ const Carousel = () => {
     },
   ];
   const [listImage, setListImage] = useState<string[]>(images);
-  console.log(listImage);
 
   // useEffect(() => {
   //   const interval = setInterval(() => {

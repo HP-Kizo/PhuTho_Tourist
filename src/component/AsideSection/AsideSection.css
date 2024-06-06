@@ -1,14 +1,15 @@
 .post__list {
-  margin-top: 16px;
+  padding-top: 16px;
   overflow-y: auto;
   overflow-x: hidden;
   display: inline-flex;
   height: 535px;
-  width: 314px;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  margin-left: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
 }
 .post__list::-webkit-scrollbar {
   width: 0px;
@@ -19,11 +20,9 @@
 }
 .post__list .post {
   display: flex;
-  width: 302px;
   height: 102px;
-  padding-right: 12px;
+  width: 100%;
   align-items: center;
-  gap: 16px;
   border-radius: 4px;
   background: #fff;
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.1);
@@ -40,12 +39,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   gap: 8px;
-  width: 186px;
-  height: 54px;
+  height: 100%;
+  padding: 12px;
 }
 .post .post__content .post__title {
-  width: 186px;
   color: var(--gray-gray-500);
 
   /* Roboto/14px: Bold */
@@ -54,12 +53,16 @@
   font-style: normal;
   font-weight: 700;
   line-height: 16px;
+  max-height: 32px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .post .post__content .post__status {
   display: flex;
   align-items: center;
   gap: 8px;
-  width: 136px;
   height: 14px;
 }
 .post__content .post__status .post__views {
@@ -78,7 +81,7 @@
   font-size: 12px;
   line-height: 14px;
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 886px) {
   .aside__section {
     width: 100%;
   }
@@ -102,5 +105,8 @@
   .post .post__content .post__title {
     font-size: 14px;
     width: 100%;
+  }
+  .post .post__image {
+    height: 78px;
   }
 }

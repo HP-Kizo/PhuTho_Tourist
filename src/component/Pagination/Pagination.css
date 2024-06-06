@@ -5,7 +5,6 @@
   padding: 8px 4px;
   align-items: center;
   gap: 12px;
-  width: 283px;
   height: 32px;
   border-radius: 99px;
   background: rgba(255, 255, 255, 0.7);
@@ -13,18 +12,35 @@
 }
 .pagination__page {
   display: flex;
-  width: 283px;
   align-items: center;
   gap: 12px;
 }
 .pagination__prev-icon,
 .pagination__next-icon {
   display: flex;
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   padding: 6px;
   justify-content: center;
   align-items: center;
+}
+.pagination__prev-icon path,
+.pagination__next-icon path {
+  fill: rgb(77, 77, 77);
+  stroke: rgb(77, 77, 77);
+}
+
+.pagination__icon-disable path {
+  fill: #a3a3a3;
+  stroke: #a3a3a3;
+}
+.pagination__prev-icon:hover,
+.pagination__next-icon:hover,
+.pagination__numberPage:hover {
+  cursor: pointer;
+}
+.pagination__icon-disable:hover {
+  cursor: unset;
 }
 .pagination__numberPage {
   background-color: transparent;
@@ -44,7 +60,7 @@
   font-weight: 500;
   line-height: 32px;
 }
-.pagination__page .active {
+.pagination__page .pagination__active {
   border-radius: 4px;
   background: var(--blue-primary-500);
   color: #fff;

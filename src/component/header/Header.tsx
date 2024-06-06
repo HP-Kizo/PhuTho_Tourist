@@ -13,7 +13,6 @@ const Header: React.FC = () => {
   const { backgroundUrl, images, loading, error } = useSelector(
     (state: RootState) => state.bg
   );
-  console.log("BG", backgroundUrl);
 
   useEffect(() => {
     dispatch(fetchBg());

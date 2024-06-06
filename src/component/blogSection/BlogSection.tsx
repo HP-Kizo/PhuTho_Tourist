@@ -10,10 +10,10 @@ import { useNavigate } from "react-router-dom";
 const BlogSection: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { blogs, loading, error } = useSelector(
+  const { blogs, slides, loading, error } = useSelector(
     (state: RootState) => state.blogs
   );
-  console.log(blogs);
+  console.log(slides);
 
   useEffect(() => {
     dispatch(fetchBlogs());

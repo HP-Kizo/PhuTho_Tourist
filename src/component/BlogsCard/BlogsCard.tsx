@@ -2,18 +2,16 @@
 import React from "react";
 import "./BlogsCard.css";
 import { ElipseOff, ElipseOn } from "../../assets/Icon";
-export interface Blog {
-  id: number;
-  image: string;
-  title: string;
-  date: string;
-  views: string;
-}
+import { Blog } from "../../typescripts/Interface";
+
 interface BlogCardProps {
   blog: Blog;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
+  function roundUpToNearestThousand(num: number): number {
+    return Math.ceil(num / 1000);
+  }
   return (
     <div className="blog-card">
       <div className="blog-card__header">
@@ -25,13 +23,16 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
           {ElipseOn}
         </div>
         <h3 className="blog-card__title">{blog.title}</h3>
+        <div className="blog-card__desc">{blog.description}</div>
         <div className="blog-card__tags">
           <button className="btn blog-card__tag">Sự kiện</button>
           <button className="btn blog-card__tag">Thông báo</button>
           <button className="btn blog-card__tag">Tin tức</button>
         </div>
         <div className="blog-card__info">
-          <span className="blog-card__views">{blog.views} lượt xem</span>
+          <span className="blog-card__views">
+            {roundUpToNearestThousand(blog.views)}N lượt xem
+          </span>
           {ElipseOff}
           <span className="blog-card__date">{blog.date}</span>
         </div>

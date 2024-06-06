@@ -1,31 +1,31 @@
-// src/SearchFilterBar.tsx
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, useEffect } from "react";
 import { format } from "date-fns";
-import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
-
 import "./SearchFilterBar.css";
-import { ArrowDownUp, Calendar, Search, Vector } from "../../assets/Icon";
-// interface SearchFilterBarProps {
-//   onSearch: (query: string) => void;
-//   onDateChange: (startDate: Date | null, endDate: Date | null) => void;
-//   onSortChange: (sortOrder: string) => void;
-// }
+import {
+  ArrowDownUp,
+  Calendar,
+  Search,
+  Topics,
+  Vector,
+} from "../../assets/Icon";
+import { SearchFilterBarProps } from "../../typescripts/Interface";
 
-const SearchFilterBar: React.FC = (
-  {
-    // onSearch,
-    // onDateChange,
-    // onSortChange,
-  }
-) => {
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
-  const [sortOrder, setSortOrder] = useState<string>("A đến Z");
+const SearchFilterBar: React.FC<SearchFilterBarProps> = ({
+  searchQuery,
+  sortBy,
+  startDate,
+  endDate,
+  onSearchQueryChange,
+  onSortByChange,
+  onStartDateChange,
+  onEndDateChange,
+}) => {
   const [openDate, setOpenDate] = useState<boolean>(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
+
   interface DateSelection {
     startDate: Date;
     endDate: Date;
@@ -38,35 +38,38 @@ const SearchFilterBar: React.FC = (
       key: "selection",
     },
   ]);
-  // const handleSelect = (ranges: RangeKeyDict) => {
-  //   const selectedRange = ranges.selection;
-  //   setDate([selectedRange]);
-  // };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value);
-    // onSearch(event.target.value);
+    const value = event.target.value;
+    onSearchQueryChange(value);
+    if (value && !recentSearches.includes(value)) {
+      setRecentSearches([value, ...recentSearches].slice(0, 5));
+    }
   };
 
-  const handleStartDateChange = (date: Date | null) => {
-    setStartDate(date);
-    // onDateChange(date, endDate);
-  };
-
-  const handleEndDateChange = (date: Date | null) => {
-    setEndDate(date);
-    // onDateChange(startDate, date);
+  const handleMenuChange = () => {
+    setOpenMenu(!openMenu);
   };
 
   const handleSortChange = () => {
-    setSortOrder(sortOrder === "A đến Z" ? "Z đến A" : "A đến Z");
-    // onSortChange(event.target.value);
+    onSortByChange(sortBy === "A đến Z" ? "Z đến A" : "A đến Z");
   };
+
+  useEffect(() => {
+    const storedSearches = localStorage.getItem("recentSearches");
+    if (storedSearches) {
+      setRecentSearches(JSON.parse(storedSearches));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+  }, [recentSearches]);
 
   return (
     <div className="search-filter-bar">
       <div className="search-filter__left">
-        <div className=" wrap__search">
+        <div className="wrap__search">
           <div className="search__left">
             {Search}
             <input
@@ -77,11 +80,17 @@ const SearchFilterBar: React.FC = (
               className="search__input"
             />
           </div>
-          {/* <p className="search__right">x</p> */}
         </div>
-        {/* <div className="search__dropdown">
-          <p>Tìm kiếm gần đây</p>
-        </div> */}
+        {searchQuery && (
+          <div className="search__dropdown">
+            <p>Tìm kiếm gần đây</p>
+            {recentSearches.map((search, index) => (
+              <p key={index} onClick={() => onSearchQueryChange(search)}>
+                {search}
+              </p>
+            ))}
+          </div>
+        )}
       </div>
       <div className="search-filter__right">
         <div className="date__picker">
@@ -89,21 +98,11 @@ const SearchFilterBar: React.FC = (
             className="headerSearchItem"
             onClick={() => setOpenDate(!openDate)}
           >
-            <span
-              onClick={() => setOpenDate(!openDate)}
-              className="headerSearchText"
-            >{`${format(date[0].startDate, "MM/dd/yyyy")} `}</span>
+            <span className="headerSearchText">{`${format(
+              date[0].startDate,
+              "MM/dd/yyyy"
+            )} `}</span>
             {Calendar}
-            {/* {openDate && (
-              <DateRangePicker
-                editableDateInputs={true}
-                // onChange={handleSelect}
-                moveRangeOnFirstSelection={false}
-                ranges={date}
-                className="date"
-                minDate={new Date()}
-              />
-            )} */}
           </div>
           {Vector}
           <div
@@ -115,37 +114,26 @@ const SearchFilterBar: React.FC = (
               "MM/dd/yyyy"
             )} `}</span>
             {Calendar}
-            {/* {openDate && (
-              <DateRange
-                editableDateInputs={true}
-                onChange={(item) => setDate([item.selection])}
-                moveRangeOnFirstSelection={false}
-                ranges={date}
-                className="date"
-                minDate={new Date()}
-              />
-            )} */}
           </div>
         </div>
-        <button
-          className="search__soft"
-          value={sortOrder}
-          onClick={handleSortChange}
-        >
+        <button className="search__soft" onClick={handleSortChange}>
           {ArrowDownUp}
-          <p>{sortOrder}</p>
+          <p className="search__softOder">{sortBy}</p>
         </button>
+        <button className="search__menu" onClick={handleMenuChange}>
+          {Topics}
+        </button>
+        {openMenu && (
+          <div className="filter-menu">
+            <p>Giới thiệu</p>
+            <p>Tin tức</p>
+            <p>Sự kiện</p>
+            <p>Thông báo</p>
+            <p>Tin cổ đông</p>
+            <p>Hoạt động đoàn thể</p>
+          </div>
+        )}
       </div>
-      {/* <DatePicker
-        selected={startDate}
-        onChange={handleStartDateChange}
-        placeholderText="Start Date"
-      />
-      <DatePicker
-        selected={endDate}
-        onChange={handleEndDateChange}
-        placeholderText="End Date"
-      /> */}
     </div>
   );
 };

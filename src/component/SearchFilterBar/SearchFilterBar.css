@@ -1,17 +1,17 @@
 .search-filter-bar {
-  width: 1134px;
+  width: 100%;
   height: 80px;
   flex-shrink: 0;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.7);
-
-  /* shadow fillter */
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.5px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
+
 .search__dropdown {
   position: absolute;
   display: flex;
@@ -19,25 +19,26 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  align-self: stretch;
   width: 300px;
   top: 48px;
   background: rgba(255, 255, 255, 0.7);
+  z-index: 1000;
 }
+
 .search__dropdown p {
   color: var(--gray-gray-600);
-
-  /* Roboto/14px: Medium */
   font-family: Roboto;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  cursor: pointer;
 }
+
 .search-filter__left {
   display: flex;
   width: 314px;
-  height: 40px;
+  max-height: 40px;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
@@ -46,10 +47,11 @@
   border-radius: 6px;
   position: relative;
 }
+
 .wrap__search {
   display: flex;
   width: 100%;
-  height: 40px;
+  max-height: 40px;
   padding: 10px 16px;
   justify-content: space-between;
   align-items: center;
@@ -58,40 +60,43 @@
   border-radius: 6px;
   background: var(--white, #fff);
 }
+
 .search__left {
   display: flex;
   padding-right: 12px;
   align-items: center;
   gap: 10px;
 }
+
 .search__input {
   color: var(--gray-gray-300, #a3a3a3);
-
-  /* Roboto/16px: Regular */
   font-family: Roboto;
   font-size: 16px;
   width: 67px;
-  line-height: 21px; /* 131.25% */
+  line-height: 21px;
   border: none;
   outline: none;
 }
+
 .search-filter__right {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 17px;
-  width: 433px;
-  height: 40px;
+  max-width: 433px;
+  height: 100%;
   margin-right: 35px;
+  position: relative;
 }
 
 .date__picker {
   display: flex;
   width: 322px;
-  height: 40px;
+  max-height: 40px;
   align-items: center;
   gap: 8px;
 }
+
 .search__soft {
   display: inline-flex;
   justify-content: center;
@@ -100,6 +105,7 @@
   border: 0;
   background: transparent;
 }
+
 .search__soft:hover {
   cursor: pointer;
 }
@@ -108,15 +114,17 @@
   color: var(--gray-gray-500);
   text-align: center;
   width: 64px;
-  /* Roboto/18px: Medium */
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 21px;
 }
-.arrowDownUp {
+
+.search__menu {
+  display: none;
 }
+
 .headerSearchItem {
   display: flex;
   width: 150px;
@@ -128,15 +136,87 @@
   border-radius: 6px;
   background: #fff;
 }
+
 .headerSearchItem:hover {
   cursor: pointer;
 }
+
 .headerSearchText {
   color: var(--gray-gray-400, #858585);
-
-  /* Roboto/16px: Regular */
   font-family: Roboto;
   font-size: 16px;
   font-weight: 400;
-  line-height: 21px; /* 131.25% */
+  line-height: 21px;
+}
+
+.filter-menu {
+  margin: 0 auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-menu p {
+  margin: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1248px) {
+  .wrap__search {
+    height: 36px;
+    padding: 4px 8px;
+    align-items: center;
+  }
+  .search-filter-bar {
+    align-items: center;
+    max-height: 60px;
+    padding: 12px;
+    gap: 8px;
+  }
+  .search__softOder {
+    display: none;
+  }
+  .date__picker {
+    display: none;
+  }
+  .search-filter__left {
+    max-width: 231px;
+    width: 70%;
+    margin: 0;
+    max-height: 36px;
+  }
+  .search-filter__right {
+    margin: 0;
+    gap: 8px;
+  }
+  .search__input {
+    font-size: 14px;
+  }
+  .search__menu {
+    display: block;
+    border: 0;
+    outline: none;
+    height: 36px;
+    padding: 8px;
+    border-radius: 4px;
+    background: var(--White, #fff);
+    cursor: pointer;
+  }
+  .search__soft {
+    width: 36px;
+    padding: 8px;
+    height: 36px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--White, #fff);
+  }
 }

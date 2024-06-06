@@ -38,3 +38,27 @@
   font-weight: 700;
   line-height: 17px;
 }
+
+@media only screen and (max-width: 605px) {
+  .document-card {
+    width: 104.762px;
+    height: 154px;
+  }
+  .document-card__info {
+    top: 40px;
+    left: 22px;
+    width: 60.762px;
+    height: 60.762px;
+  }
+  .document-card__info svg {
+    width: 60.762px;
+    height: 60.762px;
+  }
+  .document-card__title {
+    width: 81px;
+  }
+  .document-card__title p {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

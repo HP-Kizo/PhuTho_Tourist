@@ -5,11 +5,11 @@ import "./Blogs.css";
 import Header from "../../component/header/Header";
 import Carousel from "../../component/carousel/Carousel";
 import VideoBackground from "../../component/background/VideoBackground";
-
 import Footer from "../../component/footer/Footer";
 import ArticleSection from "../../component/ArticleSection/ArticleSection";
 import Topics from "../../component/Topics/Topics";
-import MainBlogs from "../../component/MainBlogs/MainBlogs";
+import { fetchBlogs } from "../../redux/blogAction";
+
 const Blogs: React.FC = () => {
   const [blogsHeight, setBlogsHeight] = useState<number>(0);
   const blogsRef = useRef<HTMLDivElement>(null);
