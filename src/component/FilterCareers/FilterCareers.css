@@ -1,19 +1,92 @@
+.careers__content-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+.careers__content-filter {
+  max-width: 362px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  overflow: hidden;
+  padding-top: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 936px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+
+  /* shadow fillter */
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.5px);
+}
+.searchBar {
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 6px;
+}
+.searchBar span:hover {
+  cursor: pointer;
+}
+.searchBar div {
+  padding: 10px 16px;
+  height: 40px;
+  display: flex;
+  padding-right: 12px;
+  align-items: center;
+  gap: 10px;
+  background: var(--white, #fff);
+  border-radius: 6px;
+}
+.searchBar__input {
+  width: 70%;
+  border: none;
+  outline: none;
+  color: var(--gray-gray-300);
+  font-family: Roboto;
+  font-size: 16px;
+
+  line-height: 21px; /* 131.25% */
+}
+.searchBar span {
+  stroke-width: 1.5px;
+  stroke: var(--gray-gray-500);
+  fill: var(--gray-gray-500);
+
+  display: flex;
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
 .wrap__filterCareers {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+.field__item:hover {
+  cursor: pointer;
+}
 
 .field {
   display: flex;
-  width: 322px;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
 }
 .field__header {
   display: flex;
-  width: 314px;
+  width: 100%;
   justify-content: start;
   align-items: center;
   gap: 8px;
@@ -38,7 +111,7 @@
   line-height: 23px;
 }
 .field__list {
-  width: 324px;
+  width: 100%;
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
@@ -63,4 +136,134 @@
   color: #fff;
   font-weight: 600;
   background: var(--blue-primary-500);
+}
+.searchBar .toggle-filter-btn {
+  display: none;
+  width: 36px;
+  height: 36px;
+  padding: 4px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: var(--White, #fff);
+}
+.toggle-filter-btn svg {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.close-filter {
+  display: none;
+}
+.toggle-filter-btn:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 1150px) {
+  .careers__content-main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .careers__content-filter {
+    width: 100%;
+    max-width: 746px;
+    height: auto;
+    padding-bottom: 24px;
+  }
+  .wrap__filterCareers {
+    /* display: none; */
+  }
+}
+@media screen and (max-width: 576px) {
+  .vector__blue {
+    width: 100%;
+  }
+  .careers__content-main {
+    padding: 0px 16px;
+    width: 100%;
+  }
+  .field__item {
+    font-size: 12px;
+    height: 28px;
+    border-radius: 99px;
+  }
+  .wrap__filterCareers {
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.5px);
+    border-radius: 12px 12px 0px 0px;
+  }
+  .searchBar {
+    height: 60px;
+    padding: 12px 0px;
+  }
+  .searchBar div {
+    height: 36px;
+  }
+  .visible {
+    display: block;
+  }
+  .hidden {
+    display: none;
+  }
+  .careers__content-filter {
+    padding: 0px 20px;
+  }
+  .close-filter {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    flex-shrink: 0;
+    margin-bottom: 32px;
+  }
+  .close-filter-cancel {
+    display: flex;
+    width: 90px;
+    height: 40px;
+    padding: 0px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px solid var(--blue-primary-500);
+    background: var(--white, #fff);
+    color: var(--blue-primary-500);
+
+    /* Roboto/14px: Medium */
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .close-filter-accept {
+    display: flex;
+    width: 221px;
+    height: 40px;
+    padding: 0px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: var(--blue-primary-500);
+    color: #fff;
+
+    /* Roboto/14px: Medium */
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .close-filter-btn:hover {
+    cursor: pointer;
+  }
 }

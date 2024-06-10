@@ -1,6 +1,7 @@
 .video-background {
+  position: absolute;
+  z-index: -1;
   height: 1080px;
-  max-width: 100%;
   width: 100%;
 }
 .video-background .video {
@@ -22,7 +23,6 @@
   gap: 24px;
 }
 .button-down {
-  width: 23px;
   flex-shrink: 0;
   padding: 9px 16px;
 }
@@ -58,4 +58,11 @@
   font-weight: 400;
   line-height: 36px; /* 150% */
   text-align: center;
+}
+
+@media only screen and (max-width: 605px) {
+  .video-background {
+    height: 100vh;
+    min-height: 758px;
+  }
 }

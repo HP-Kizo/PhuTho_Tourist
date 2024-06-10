@@ -15,8 +15,6 @@ const MainBlogs: React.FC<{ category: string }> = ({ category }) => {
   const { blogs, slides, loading, error } = useSelector(
     (state: RootState) => state.blogs
   );
-  console.log("Blogs", blogs);
-  console.log("Slides", slides);
 
   useEffect(() => {
     dispatch(fetchBlogs());
@@ -28,6 +26,7 @@ const MainBlogs: React.FC<{ category: string }> = ({ category }) => {
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
   const [isInitialRender, setIsInitialRender] = useState<boolean>(true);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(12);
 
   const documentMainRef = useRef<HTMLDivElement>(null);
   const scrollToDocumentMain = () => {
@@ -66,6 +65,9 @@ const MainBlogs: React.FC<{ category: string }> = ({ category }) => {
       return b.title.localeCompare(a.title);
     }
   });
+
+  const totalPages = Math.ceil(sortedBlogs.length / itemsPerPage);
+
   useEffect(() => {
     setCurrentPage(1);
   }, [category]);
@@ -86,14 +88,18 @@ const MainBlogs: React.FC<{ category: string }> = ({ category }) => {
         <div className="main__blogs-main">
           {!loading &&
             sortedBlogs
-              .slice((currentPage - 1) * 11, 12)
-              .map((blog) => <BlogCard key={blog.id} blog={blog} />)}
+              .slice(
+                (currentPage - 1) * itemsPerPage,
+                currentPage * itemsPerPage
+              )
+              .map((blog) => {
+                return <BlogCard key={blog.id} blog={blog} />;
+              })}
         </div>
       </div>
       {!loading && sortedBlogs.length !== 0 && (
         <Pagination
-          totalArticles={sortedBlogs.length}
-          articlesPerPage={12}
+          totalPages={totalPages}
           currentPage={currentPage}
           onPageChange={onPageChange}
         />

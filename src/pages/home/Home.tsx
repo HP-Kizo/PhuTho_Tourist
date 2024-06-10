@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
-import Header from "../../component/header/Header";
-import Carousel from "../../component/carousel/Carousel";
+import Header from "../../component/Header/Header";
+import Carousel from "../../component/Carousel/Carousel";
 import "./Home.css";
-import VideoBackground from "../../component/background/VideoBackground";
-import AboutUs from "../../component/aboutUs/AboutUs";
-import BlogSection from "../../component/blogSection/BlogSection";
+import VideoBackground from "../../component/Background/VideoBackground";
+import AboutUs from "../../component/AboutUs/AboutUs";
+import BlogSection from "../../component/BlogSection/BlogSection";
 import Services from "../../component/servicesHome/Services";
-import Footer from "../../component/footer/Footer";
+import Footer from "../../component/Footer/Footer";
 import { ButtonDown } from "../../assets/Icon";
 import MainHeaderHome from "../../component/MainHeaderHome/MainHeaderHome";
 const Home: React.FC = () => {

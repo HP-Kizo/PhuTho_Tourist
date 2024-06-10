@@ -1,25 +1,10 @@
 // src/components/JobDetails.tsx
 import React, { useRef, useState } from "react";
 import "./JobDetails.css";
+import { Job } from "../../typescripts/Interface";
 
 type JobDetailsProps = {
-  jobDetails: {
-    id: number;
-    image: string;
-    title: string;
-    position: string;
-    quantity: string;
-    workplace: string;
-    address: string;
-    jobDescription: string[];
-    workingDays: string;
-    workingHours: string;
-    benefits: string[];
-    requirements: string[];
-    age: string;
-    lever: string;
-    includes: string[];
-  };
+  jobDetails: Job;
 };
 const JobDetails: React.FC<JobDetailsProps> = ({ jobDetails }) => {
   return (
@@ -35,12 +20,12 @@ const JobDetails: React.FC<JobDetailsProps> = ({ jobDetails }) => {
         }}
       ></div>
       <div className="job-details__main">
-        <h1 className="job-details__title">{jobDetails.title}</h1>
+        <h1 className="job-details__title">Chi tiết tin tuyển dụng</h1>
         <table className="job-details__table">
           <tbody>
             <tr className="job-details__row">
               <td className="job-details__label">Vị trí</td>
-              <td className="job-details__value">{jobDetails.position}</td>
+              <td className="job-details__value">{jobDetails.title}</td>
             </tr>
             <tr className="job-details__row">
               <td className="job-details__label">Số lượng</td>
@@ -58,7 +43,7 @@ const JobDetails: React.FC<JobDetailsProps> = ({ jobDetails }) => {
               <td className="job-details__label">Mô tả công việc</td>
               <td className="job-details__value">
                 <ul className="job-details__desc">
-                  {jobDetails.jobDescription.map((desc, index) => (
+                  {jobDetails.description.map((desc, index) => (
                     <li key={index}>{desc}</li>
                   ))}
                 </ul>

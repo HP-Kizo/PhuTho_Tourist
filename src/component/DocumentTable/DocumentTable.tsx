@@ -9,107 +9,35 @@ import {
   IconX,
   Search,
 } from "../../assets/Icon";
+import { RootState } from "../../redux/store";
+import { useSelector } from "react-redux";
 
 interface Document {
   id: number;
   name: string;
+  fileUrl: string;
   creationDate: string;
 }
 
-const documents: Document[] = [
-  { id: 1, name: "Khám phá Hội An - Việt Nam", creationDate: "03/03/12 22:43" },
-  {
-    id: 2,
-    name: "Hải Phòng yêu cầu người dân không ra khỏi nhà sau 22h",
-    creationDate: "03/03/12 22:43",
-  },
-  {
-    id: 3,
-    name: "Chuẩn bị gì sau khi tiêm vaccin Covid-19?",
-    creationDate: "03/03/12 22:43",
-  },
-  { id: 4, name: "SNOW CHANNEL 1", creationDate: "03/03/12 22:43" },
-  {
-    id: 5,
-    name: "Chuẩn bị gì sau khi tiêm vaccin Covid-19?",
-    creationDate: "03/03/12 22:43",
-  },
-  {
-    id: 6,
-    name: "Hải Phòng yêu cầu người dân không ra khỏi nhà sau 22h",
-    creationDate: "03/03/12 22:43",
-  },
-  {
-    id: 7,
-    name: "Chuẩn bị gì sau khi tiêm vaccin Covid-19?",
-    creationDate: "03/03/12 22:43",
-  },
-  {
-    id: 8,
-    name: "Du lịch ở Tp.HCM đang như thế nào? 101",
-    creationDate: "03/03/12 22:43",
-  },
-  { id: 9, name: "SNOW CHANNEL 1", creationDate: "03/03/12 22:43" },
-  {
-    id: 10,
-    name: "Hải Phòng yêu cầu người dân không ra khỏi nhà sau 22h",
-    creationDate: "03/03/12 22:43",
-  },
-  { id: 1, name: "Khám phá Hội An - Việt Nam", creationDate: "03/03/12 22:43" },
-  {
-    id: 2,
-    name: "Hải Phòng yêu cầu người dân không ra khỏi nhà sau 22h",
-    creationDate: "03/03/12 22:43",
-  },
-  {
-    id: 3,
-    name: "Chuẩn bị gì sau khi tiêm vaccin Covid-19?",
-    creationDate: "03/03/12 22:43",
-  },
-  { id: 4, name: "SNOW CHANNEL 1", creationDate: "03/03/12 22:43" },
-  {
-    id: 5,
-    name: "Chuẩn bị gì sau khi tiêm vaccin Covid-19?",
-    creationDate: "03/03/12 22:43",
-  },
-  {
-    id: 6,
-    name: "Hải Phòng yêu cầu người dân không ra khỏi nhà sau 22h",
-    creationDate: "03/03/12 22:43",
-  },
-  {
-    id: 7,
-    name: "Chuẩn bị gì sau khi tiêm vaccin Covid-19?",
-    creationDate: "03/03/12 22:43",
-  },
-  {
-    id: 8,
-    name: "Du lịch ở Tp.HCM đang như thế nào? 101",
-    creationDate: "03/03/12 22:43",
-  },
-  { id: 9, name: "SNOW CHANNEL 1", creationDate: "03/03/12 22:43" },
-  {
-    id: 10,
-    name: "Hải Phòng yêu cầu người dân không ra khỏi nhà sau 22h",
-    creationDate: "03/03/12 22:43",
-  },
-];
-
 const DocumentTable: React.FC = () => {
+  const { documentTable, loading, error } = useSelector(
+    (state: RootState) => state.documents
+  );
   const [displayCount, setDisplayCount] = useState<number>(10);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [searchKeyword, setSearchKeyword] = useState<string>("");
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
-  const [filteredDocuments, setFilteredDocuments] =
-    useState<Document[]>(documents);
+  const [filteredDocuments, setFilteredDocuments] = useState<Document[]>([]);
 
   useEffect(() => {
     filterDocuments();
-  }, [searchKeyword, startDate, endDate]);
-
+  }, [searchKeyword, startDate, endDate, documentTable]);
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [displayCount]);
   const filterDocuments = () => {
-    let filtered = documents;
+    let filtered = documentTable;
 
     if (searchKeyword) {
       filtered = filtered.filter((doc) =>
@@ -154,6 +82,23 @@ const DocumentTable: React.FC = () => {
     if (page > totalPages) page = totalPages;
     setCurrentPage(page);
   };
+
+  const handleDownload = (fileUrl: string) => {
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.setAttribute("download", "filename.ext");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="document-table">
@@ -218,9 +163,19 @@ const DocumentTable: React.FC = () => {
             {paginatedDocuments.map((document, index) => (
               <tr key={document.id}>
                 <td>{startIndex + index + 1}</td>
-                <td>{document.name}</td>
+                <td>
+                  <span className="document-table_name">{document.name}</span>
+                  <span className="document-table_date">
+                    {document.creationDate}
+                  </span>
+                </td>
                 <td>{document.creationDate}</td>
-                <td className="document-table__download-btn">{DownLoadIcon}</td>
+                <td
+                  className="document-table__download-btn"
+                  onClick={() => handleDownload(document.fileUrl)}
+                >
+                  {DownLoadIcon}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -239,7 +194,14 @@ const DocumentTable: React.FC = () => {
             <span>câu trả lời trong mỗi trang</span>
           </div>
           <div className="document-table__pagination">
-            <div onClick={() => handlePageChange(currentPage - 1)}>
+            <div
+              className={
+                currentPage === 1
+                  ? "pagination-prev pagination-btn pagination__icon-disable"
+                  : "pagination-prev pagination-btn"
+              }
+              onClick={() => handlePageChange(currentPage - 1)}
+            >
               {ArrowLeft}
             </div>
             <div className="document-table__numberPage">
@@ -248,7 +210,7 @@ const DocumentTable: React.FC = () => {
                   <div
                     key={page}
                     className={`pagination-btn ${
-                      currentPage === page ? "active" : ""
+                      currentPage === page ? "pagination-btn__active" : ""
                     }`}
                     onClick={() => handlePageChange(page)}
                   >
@@ -257,7 +219,14 @@ const DocumentTable: React.FC = () => {
                 )
               )}
             </div>
-            <div onClick={() => handlePageChange(currentPage + 1)}>
+            <div
+              className={
+                currentPage === totalPages
+                  ? "pagination-next pagination-btn pagination__icon-disable"
+                  : "pagination-next pagination-btn"
+              }
+              onClick={() => handlePageChange(currentPage + 1)}
+            >
               {ArrowRight}
             </div>
           </div>

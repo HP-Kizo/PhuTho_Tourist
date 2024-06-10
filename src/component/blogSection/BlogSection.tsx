@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../card/Card";
+import Card from "../Card/Card";
 import "./BlogSection.css";
 import { RootState, useAppDispatch } from "../../redux/store";
 import { fetchBlogs } from "../../redux/blogAction";

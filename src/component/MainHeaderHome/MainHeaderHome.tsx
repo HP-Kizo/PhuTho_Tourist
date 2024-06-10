@@ -1,6 +1,6 @@
 import React from "react";
 import { ButtonDown } from "../../assets/Icon";
-import Carousel from "../carousel/Carousel";
+import Carousel from "../Carousel/Carousel";
 import "./MainHeaderHome.css";
 interface MainHeaderHomeProps {
   scrollToAboutUs: () => void;

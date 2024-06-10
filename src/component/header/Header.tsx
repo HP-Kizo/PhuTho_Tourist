@@ -3,7 +3,7 @@ import { Logo, LogoM, Menu, XMark } from "../../assets/Icon";
 import "./Header.css";
 import Navbar from "../Navbar/Navbar";
 import { NavLink, useParams } from "react-router-dom";
-import VideoBackground from "../background/VideoBackground";
+import VideoBackground from "../Background/VideoBackground";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../redux/store";
 import { fetchBg } from "../../redux/bgAction";

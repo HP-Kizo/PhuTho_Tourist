@@ -1,14 +1,12 @@
 .article__document {
   display: flex;
-  width: 775px;
+  margin: 0 auto;
+  max-width: 775px;
   overflow: hidden;
   justify-content: flex-end;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  top: 168px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 168px;
 }
 .article__document .wrap__polygon {
   background: transparent;
@@ -48,10 +46,13 @@
   }
 }
 
-@media only screen and (max-width: 605px) {
+@media only screen and (max-width: 576px) {
   .wrap__document-card {
     max-height: 330px;
     width: 100%;
     overflow: hidden;
+  }
+  .article__document {
+    margin-top: 69px;
   }
 }

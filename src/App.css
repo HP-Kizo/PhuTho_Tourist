@@ -33,6 +33,9 @@
 .btn:hover {
   cursor: pointer;
 }
-
+.button__hover:hover {
+  cursor: pointer;
+  background: var(--blue-primary-400);
+}
 @media only screen and (min-width: 375px) and (max-width: 576px) {
 }

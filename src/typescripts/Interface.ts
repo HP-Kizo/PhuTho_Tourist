@@ -1,12 +1,40 @@
 export interface Job {
-  id: string;
+  id: number;
+  image: string;
   title: string;
   position: string;
-  short_desc: string;
-  location: string;
+  status: string;
+  quantity: string;
+  workplace: string;
   date: string;
-  status: "Đã hết hạn" | "Đang tuyển";
+  address: string;
+  field: string;
+  form: string;
+  place: string;
+  short_desc: string;
+  description: string[];
+  workingDays: string;
+  workingHours: string;
+  benefits: string[];
+  requirements: string[];
+  age: string;
+  lever: string;
+  includes: string[];
 }
+interface Result {
+  selectedCompany: string;
+  price: string;
+  ranking: string;
+  contract: string;
+}
+
+interface Content {
+  intro: string;
+  auctionDetails: string[];
+  result: Result;
+  notice: string;
+}
+
 export interface Blog {
   id: number;
   image: string;
@@ -16,6 +44,7 @@ export interface Blog {
   author: string;
   date: string;
   views: number;
+  content: Content;
 }
 export interface Slide {
   background: string;
@@ -47,4 +76,19 @@ export interface SearchFilterBarProps {
   onSortByChange: (sortBy: string) => void;
   onStartDateChange: (date: string) => void;
   onEndDateChange: (date: string) => void;
+}
+
+export interface Reports {
+  id: number;
+  title: string;
+  year: string;
+  fileUrl: string;
+  image: string;
+}
+
+export interface DocumentTable {
+  id: number;
+  name: string;
+  fileUrl: string;
+  creationDate: string;
 }

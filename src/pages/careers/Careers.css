@@ -1,16 +1,14 @@
 .careers {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1920px;
   margin: 0px auto;
 }
 .careers__content {
-  position: absolute;
-  top: 168px;
-  left: 50%;
-  transform: translate(-50%);
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  margin-top: 168px;
 }
 
 .careers .careers__polygon {
@@ -49,29 +47,8 @@
   flex-direction: column;
   gap: 48px;
 }
-.careers__content-main {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-}
-.careers__content-filter {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 24px;
-  overflow: hidden;
-  padding-top: 24px;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 936px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.7);
 
-  /* shadow fillter */
-  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.5px);
-}
+
 .careers__content-jobList {
   display: flex;
   flex-direction: column;
@@ -83,4 +60,29 @@
   stroke: var(--white, #fff);
 }
 .careers__content-jobList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+@media screen and (max-width: 886px) {
+  .careers__polygon svg {
+    width: 247px;
+    height: 64px;
+    flex-shrink: 0;
+  }
+  .careers .careers__polygon {
+    width: auto;
+    height: auto;
+  }
+  .careers__polygon .polygon__title {
+    font-size: 26px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .careers__content {
+    margin-top: 69px;
+  }
 }

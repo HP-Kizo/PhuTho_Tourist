@@ -1,30 +1,57 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Posts.css";
-import Header from "../header/Header";
-import VideoBackground from "../background/VideoBackground";
-import Footer from "../footer/Footer";
+import Header from "../Header/Header";
+import VideoBackground from "../Background/VideoBackground";
+import Footer from "../Footer/Footer";
 import RelatedPosts from "../RelatedPosts/RelatedPosts";
 import PostsContent from "../postsContent/PostsContent";
+import AsideSection from "../AsideSection/AsideSection";
 
 const Posts: React.FC = () => {
-  const [postHeight, setPostHeight] = useState<number>(0);
-  const postsRef = useRef<HTMLDivElement>(null);
+  const postRef = useRef<HTMLDivElement>(null);
 
-  console.log(postHeight);
+  const [width, setWidth] = useState<number>(0);
+  const updateWidth = () => {
+    if (postRef.current) {
+      setWidth(postRef.current.offsetWidth);
+    }
+  };
+  console.log(width);
 
   useEffect(() => {
-    if (postsRef.current) {
-      setPostHeight(postsRef.current.clientHeight + 168 - 1080);
-    }
+    // Cập nhật width lần đầu khi component mount
+    updateWidth();
+
+    // Thêm event listener khi component mount
+    window.addEventListener("resize", updateWidth);
+
+    // Loại bỏ event listener khi component unmount
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+    };
   }, []);
+
+  useEffect(() => {
+    if (width < 700) {
+      // setItemsPerPage(6);
+    } else {
+      // setItemsPerPage(9);
+    }
+  }, [width]);
   return (
-    <div className="posts">
+    <div className="posts" ref={postRef}>
       <Header></Header>
-      <div className="wrap-posts" ref={postsRef}>
+      <div className="wrap-posts">
         <PostsContent></PostsContent>
-        <RelatedPosts></RelatedPosts>
+        <div className="related-posts__header">
+          {width > 700 ? "Bài viết liên quan" : "Bài mới nhất"}{" "}
+        </div>
+        {width > 700 ? (
+          <RelatedPosts></RelatedPosts>
+        ) : (
+          <AsideSection></AsideSection>
+        )}
       </div>
-      <div style={{ height: `${postHeight}px` }}></div>
       <Footer />
     </div>
   );

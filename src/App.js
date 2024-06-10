@@ -7,7 +7,7 @@ import Blogs from "./pages/blogs/Blogs";
 import Documents from "./pages/documents/Documents";
 import Posts from "./component/posts/Posts";
 import Careers from "./pages/careers/Careers";
-import CareersDetail from "./component/careersDetail/careersDetail";
+import CareersDetail from "./component/CareersDetail/careersDetail";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "./redux/store";
 import { fetchJobs } from "./redux/jobActions";
@@ -27,8 +27,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
 
+        <Route path="/blogs/:id" element={<Posts />} />
         <Route path="/documents" element={<Documents />} />
-        <Route path="/documents/:id" element={<Posts />} />
         <Route path="/careers" element={<Careers />} />
 
         <Route path="/careers/:id" element={<CareersDetail />} />

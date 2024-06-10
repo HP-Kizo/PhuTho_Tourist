@@ -4,12 +4,14 @@ import { useDispatch } from "react-redux";
 import jobReducer from "./jobSlice";
 import blogReducer from "./blogSlice";
 import bgReducer from "./bgSlice";
+import documentReducer from "./documentSlice";
 
 export const store = configureStore({
   reducer: {
     jobs: jobReducer,
     blogs: blogReducer,
     bg: bgReducer,
+    documents: documentReducer,
   },
 });
 

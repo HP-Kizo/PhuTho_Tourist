@@ -1,5 +1,6 @@
 .jobList {
-  width: 1134px;
+  width: 100%;
+  max-width: 1134px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,7 +87,6 @@
   top: 84px;
   display: inline-flex;
   padding: 8px 12px;
-  height: 16px;
   justify-content: center;
   align-items: center;
   border-radius: 46px;
@@ -126,15 +126,19 @@
 }
 .jobList__detail p {
   width: 320px;
-  height: 46px;
   flex-shrink: 0;
   color: var(--gray-gray-500);
   font-family: Roboto;
   font-size: 13px;
   line-height: 17px; /* 130.769% */
+  max-height: 84px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 .jobList__button {
-  margin-left: 20px;
+  margin: 0px auto;
   margin-top: 16px;
   display: flex;
   width: 321px;
@@ -154,4 +158,59 @@
   font-style: normal;
   font-weight: 600;
   line-height: 19px;
+}
+
+.loading {
+  color: var(--blue-primary-600);
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+}
+.error {
+  color: #ff3939;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+}
+@media screen and (max-width: 576px) {
+  .jobList__item {
+    width: 100%;
+  }
+  .jobList__detail p {
+    width: auto;
+  }
+  .jobList__position {
+    display: flex;
+  }
+  .jobList__button {
+    width: 92%;
+    height: 40px;
+  }
+  .jobList__title {
+    font-size: 14px;
+  }
+  .jobList__location {
+    margin-left: 20px;
+  }
+  .jobList__location-item p {
+    font-size: 12px;
+    line-height: normal;
+  }
+  .jobList__status {
+    font-size: 14px;
+    line-height: normal;
+    top: 64px;
+  }
+  .jobList__detail h1,
+  .jobList__button {
+    font-size: 14px;
+  }
 }

@@ -1,20 +1,18 @@
 .main-content {
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  height: 690px;
-  top: 168px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 42px;
+  margin-top: 168px;
+  margin-bottom: 92px;
 }
 .button-down:hover {
   cursor: pointer;
 }
 @media (max-width: 576px) {
   .main-content {
-    top: 90px;
+    margin-top: 90px;
+    margin-bottom: 32px;
   }
   .header-text {
     gap: 12px;

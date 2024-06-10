@@ -16,15 +16,18 @@
   line-height: 28px;
 }
 .form-job {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 32px;
+  margin: 0 auto;
 }
 .form__section-top {
   display: flex;
   align-items: flex-start;
   gap: 80px;
+  width: 100%;
 }
 .form__section-left,
 .form__section-right {
@@ -32,6 +35,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
+  flex: 1;
 }
 .form__section {
   display: flex;
@@ -39,6 +43,7 @@
   align-items: flex-start;
   gap: 8px;
   width: 437px;
+  height: 69px;
 }
 .form__label {
   color: var(--gray-gray-600);
@@ -60,7 +65,7 @@
   border: none;
   outline: none;
   color: var(--gray-gray-300);
-
+  height: 40px;
   /* Roboto/16px: Regular */
   font-family: Roboto;
   font-size: 16px;
@@ -90,7 +95,7 @@
   display: flex;
   height: 36px;
   padding-right: 12px;
-  align-items: flex-start;
+  align-items: center;
   gap: 28px;
   flex-shrink: 0;
 }
@@ -121,7 +126,6 @@
 .numberPrefix {
   display: flex;
   height: 32px;
-  width: 50px;
   padding: 4px 12px;
   align-items: center;
   gap: 4px;
@@ -135,7 +139,7 @@
     transparent -1.647px -1.647px / 118.301% 118.301% no-repeat;
 }
 .numberPrefix span {
-  color: var(--gray-gray-500, #666);
+  color: var(--gray-gray-500);
   font-family: "Helvetica Neue";
   font-size: 16px;
   font-style: normal;
@@ -148,9 +152,8 @@
 } */
 .phoneNumber {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
-  align-self: stretch;
 }
 /* #facebook {
   padding: 10px 297px 9px 16px;
@@ -188,6 +191,9 @@
 }
 .form__radio-group .form__radio-group-3 {
   padding: 5px 0px 4px 0px;
+}
+.form__section-bottom {
+  width: 100%;
 }
 #workHistory,
 #personalExperience {
@@ -230,4 +236,63 @@
   width: 100%;
   display: flex;
   justify-content: end;
+}
+.form__section-textarea {
+  height: unset;
+  width: unset;
+}
+
+@media screen and (max-width: 1287px) {
+  .form-title {
+    font-size: 20px;
+  }
+  .form__section-top {
+    gap: 20px;
+  }
+  .form__label {
+    font-size: 14px;
+  }
+  .form__input,
+  .file-upload__file-name,
+  .numberPrefix span {
+    font-size: 12px;
+  }
+  .form__radio-group label {
+    font-size: 12px;
+  }
+  .form__radio-group {
+    gap: 8px;
+    height: auto;
+  }
+  .form__section {
+    width: 100%;
+  }
+  .wrap_fileName {
+    gap: unset;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .form__radio-group div {
+    gap: 8px;
+  }
+  #workHistory,
+  #personalExperience {
+    font-size: 12px;
+    width: 100%;
+    height: unset;
+    min-height: 101px;
+  }
+}
+
+@media screen and (max-width: 676px) {
+  .form__section-top {
+    flex-direction: column;
+  }
+  .form__section-left,
+  .form__section-right {
+    max-width: 100%;
+  }
+  .form__button {
+    width: 100%;
+  }
 }

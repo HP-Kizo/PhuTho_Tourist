@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import Header from "../../component/header/Header";
-import VideoBackground from "../../component/background/VideoBackground";
-import Footer from "../../component/footer/Footer";
+import Header from "../../component/Header/Header";
+import VideoBackground from "../../component/Background/VideoBackground";
+import Footer from "../../component/Footer/Footer";
 import { Polygon } from "../../assets/Icon";
 import ArticleDocuments from "../../component/ArtircleDocuments/ArticleDocuments";
 import DocumentTable from "../../component/DocumentTable/DocumentTable";

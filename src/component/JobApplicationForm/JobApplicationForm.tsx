@@ -308,7 +308,7 @@ const JobApplicationForm: React.FC = () => {
           </div>
         </div>
         <div className="form__section-bottom">
-          <div className="form__section">
+          <div className="form__section form__section-textarea">
             <label htmlFor="workHistory" className="form__label">
               Những nơi đã từng làm việc trước đây (ghi rõ vị trí)
             </label>
@@ -321,7 +321,7 @@ const JobApplicationForm: React.FC = () => {
               placeholder="Những nơi đã từng làm việc trước đây"
             ></textarea>
           </div>
-          <div className="form__section">
+          <div className="form__section form__section-textarea">
             <label htmlFor="personalExperience" className="form__label">
               Kinh nghiệm bản thân
             </label>
