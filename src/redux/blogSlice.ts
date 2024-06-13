@@ -4,7 +4,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Blog, Slide } from "../typescripts/Interface";
 
 interface BlogState {
-  slides: Slide[];
+  slides: Blog[];
   blogs: Blog[];
   loading: boolean;
   error: string | null;

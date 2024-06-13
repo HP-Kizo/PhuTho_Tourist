@@ -48,11 +48,19 @@
   background: #fff;
   margin: 0px 20px;
 }
+.topic__item path {
+  fill: rgb(0, 84, 166);
+  stroke: rgb(0, 84, 166);
+}
+
 .topic__nav .topic__active {
   border-radius: 8px;
   background: var(--blue-primary-500);
 }
-
+.topic__active path {
+  fill: var(--white, #fff);
+  stroke: var(--white, #fff);
+}
 .topic__nav .topic__item span {
   color: var(--blue-primary-300);
 
@@ -75,9 +83,6 @@
   cursor: pointer;
 }
 @media screen and (max-width: 1248px) {
-  .topic__wrap {
-    width: 90vw;
-  }
   .topic-left {
     display: none;
   }

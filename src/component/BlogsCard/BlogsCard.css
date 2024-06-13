@@ -10,17 +10,25 @@
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
+.blog-card:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
 .blog-card__header {
   display: flex;
   width: 265px;
   max-height: 146px;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .blog-card__image {
   width: 100%;
   max-height: 146px;
   object-fit: cover;
+}
+.blog-card:hover .slider__hover-text {
+  opacity: 1;
 }
 .blog-card__content {
   display: flex;

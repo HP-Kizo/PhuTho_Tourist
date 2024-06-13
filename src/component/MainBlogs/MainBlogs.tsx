@@ -8,8 +8,12 @@ import { useNavigate } from "react-router-dom";
 import { RootState, useAppDispatch } from "../../redux/store";
 import { useSelector } from "react-redux";
 import { fetchBlogs } from "../../redux/blogAction";
+import { format } from "date-fns";
 
-const MainBlogs: React.FC<{ category: string }> = ({ category }) => {
+const MainBlogs: React.FC<{
+  category: string;
+  setCategory: (category: string) => void;
+}> = ({ category, setCategory }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { blogs, slides, loading, error } = useSelector(
@@ -23,8 +27,9 @@ const MainBlogs: React.FC<{ category: string }> = ({ category }) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortBy, setSortBy] = useState<string>("A đến Z");
-  const [startDate, setStartDate] = useState<string>("");
-  const [endDate, setEndDate] = useState<string>("");
+  const [startDate, setStartDate] = useState<string>("2022-01-01");
+  const today = format(new Date(), "yyyy-MM-dd");
+  const [endDate, setEndDate] = useState<string>(today);
   const [isInitialRender, setIsInitialRender] = useState<boolean>(true);
   const [itemsPerPage, setItemsPerPage] = useState<number>(12);
 
@@ -34,6 +39,7 @@ const MainBlogs: React.FC<{ category: string }> = ({ category }) => {
       documentMainRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   const onPageChange = (page: number) => {
     setCurrentPage(page);
     return;
@@ -51,9 +57,13 @@ const MainBlogs: React.FC<{ category: string }> = ({ category }) => {
       blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       blog.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = category ? blog.category === category : true;
+
+    const blogDate = new Date(blog.date);
+    const start = startDate ? new Date(startDate) : null;
+    const end = endDate ? new Date(endDate) : null;
+
     const matchesDateRange =
-      (!startDate || new Date(blog.date) >= new Date(startDate)) &&
-      (!endDate || new Date(blog.date) <= new Date(endDate));
+      (!start || blogDate >= start) && (!end || blogDate <= end);
 
     return matchesSearchQuery && matchesCategory && matchesDateRange;
   });
@@ -79,10 +89,12 @@ const MainBlogs: React.FC<{ category: string }> = ({ category }) => {
         sortBy={sortBy}
         startDate={startDate}
         endDate={endDate}
+        category={category}
         onSearchQueryChange={setSearchQuery}
         onSortByChange={setSortBy}
         onStartDateChange={setStartDate}
         onEndDateChange={setEndDate}
+        setCategory={setCategory}
       />
       <div className="main__blogs-content">
         <div className="main__blogs-main">

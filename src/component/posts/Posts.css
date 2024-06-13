@@ -23,14 +23,19 @@
 }
 @media screen and (max-width: 1150px) {
   .wrap-posts {
-    gap: 24px;
     padding: 36px;
     width: 95%;
+  }
+  .posts__item {
+    gap: 24px;
   }
 }
 @media screen and (max-width: 886px) {
   .wrap-posts {
     margin-top: 136px;
+    gap: 16px;
+  }
+  .posts__item {
     gap: 16px;
   }
 }

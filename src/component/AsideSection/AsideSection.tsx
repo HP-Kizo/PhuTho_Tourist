@@ -29,7 +29,13 @@ const AsideSection: React.FC = () => {
   return (
     <ul className="post__list">
       {sortedBlogs.map((post) => (
-        <li key={post.id} className="post">
+        <li
+          key={post.id}
+          className="post"
+          onClick={() => {
+            navigate(`${post.id}`, { state: { post } });
+          }}
+        >
           <img src={post.image} alt={post.title} className="post__image" />
           <div className="post__content">
             <h3 className="post__title">{post.title}</h3>

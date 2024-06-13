@@ -76,6 +76,12 @@
   font-weight: 700;
   line-height: 19px;
 }
+.related-title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
 .related-tags {
   display: flex;
   align-items: flex-start;

@@ -7,6 +7,26 @@
   backdrop-filter: blur(7.5px);
   margin: 70px auto 0px auto;
 }
+.document-loading {
+  color: var(--blue-primary-500);
+  text-align: center;
+  /* Roboto/18px: Medium */
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 21px;
+  margin: 0 auto;
+}
+.document-error {
+  color: red;
+  text-align: center;
+  /* Roboto/18px: Medium */
+  font-family: Roboto;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 21px;
+  margin: 0 auto;
+}
 .wrap__document-table {
   padding: 48px 54px;
   width: 100%;
@@ -17,7 +37,7 @@
   margin-bottom: 14px;
 }
 .document-table__date {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;

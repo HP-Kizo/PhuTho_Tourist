@@ -17,7 +17,10 @@ const Card: React.FC<Blog> = ({
   }
   return (
     <div className="card">
-      <img src={image} alt={title} className="card__image" />
+      <div className="card__image">
+        <img src={image} alt={title} />
+        <div className="slider__hover-text">Click để xem</div>
+      </div>
       <div className="card__content">
         <div className="card__header">
           <div className="card__position">

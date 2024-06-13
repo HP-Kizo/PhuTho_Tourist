@@ -33,4 +33,8 @@
   .main__blogs {
     margin-bottom: 40px;
   }
+  .main__blogs-content {
+    width: 90vw;
+    margin: 0 auto;
+  }
 }

@@ -11,14 +11,13 @@
   justify-content: flex-start;
   align-items: center;
   gap: 24px;
-  overflow: hidden;
   padding-top: 24px;
   padding-left: 20px;
   padding-right: 20px;
   height: 936px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.7);
-
+  z-index: 1;
   /* shadow fillter */
   box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.5px);
@@ -69,6 +68,11 @@
 }
 
 .wrap__filterCareers {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.wrap__field {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -163,6 +167,19 @@
 .toggle-filter-btn:hover {
   cursor: pointer;
 }
+
+/* .wrap__filterCareers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  overflow-y: auto;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+} */
+
 @media screen and (max-width: 1150px) {
   .careers__content-main {
     flex-direction: column;
@@ -184,14 +201,24 @@
   .vector__blue {
     width: 100%;
   }
-  .careers__content-main {
-    padding: 0px 16px;
+  .searchBar .toggle-filter-btn {
+    display: flex;
+  }
+  .careers__content-filter,
+  .careers__content-jobList {
+    width: 94%;
+  }
+  .careers__content-filter-w {
     width: 100%;
   }
   .field__item {
     font-size: 12px;
     height: 28px;
     border-radius: 99px;
+    background: var(--blue-primary-50);
+  }
+  .field__item-active {
+    background: var(--blue-primary-500);
   }
   .wrap__filterCareers {
     z-index: 10;
@@ -208,13 +235,25 @@
     height: 36px;
   }
   .visible {
-    display: block;
+    display: flex;
+    padding: 0px 24px;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
   }
+
   .hidden {
     display: none;
   }
   .careers__content-filter {
     padding: 0px 20px;
+    position: relative;
+  }
+  .wrap__field {
+    height: 90%;
+    overflow-y: scroll;
   }
   .close-filter {
     display: flex;
@@ -224,9 +263,10 @@
     align-items: flex-start;
     gap: 16px;
     flex-shrink: 0;
-    margin-bottom: 32px;
+    margin-bottom: 12px;
   }
   .close-filter-cancel {
+    flex: 1;
     display: flex;
     width: 90px;
     height: 40px;
@@ -246,8 +286,9 @@
     font-weight: 600;
   }
   .close-filter-accept {
+    flex: 2;
     display: flex;
-    width: 221px;
+
     height: 40px;
     padding: 0px 28px;
     justify-content: center;
@@ -262,8 +303,5 @@
     font-family: Roboto;
     font-size: 14px;
     font-weight: 600;
-  }
-  .close-filter-btn:hover {
-    cursor: pointer;
   }
 }

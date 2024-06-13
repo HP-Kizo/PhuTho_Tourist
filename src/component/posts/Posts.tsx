@@ -6,16 +6,25 @@ import Footer from "../Footer/Footer";
 import RelatedPosts from "../RelatedPosts/RelatedPosts";
 import PostsContent from "../postsContent/PostsContent";
 import AsideSection from "../AsideSection/AsideSection";
+import { useParams } from "react-router-dom";
 
 const Posts: React.FC = () => {
   const postRef = useRef<HTMLDivElement>(null);
-
+  const scrollToPost = () => {
+    if (postRef.current) {
+      postRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   const [width, setWidth] = useState<number>(0);
   const updateWidth = () => {
     if (postRef.current) {
       setWidth(postRef.current.offsetWidth);
     }
   };
+  const params = useParams();
+  useEffect(() => {
+    scrollToPost();
+  }, [params]);
   console.log(width);
 
   useEffect(() => {

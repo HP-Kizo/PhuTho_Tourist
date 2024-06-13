@@ -1,0 +1,158 @@
+.date-picker-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.date-picker-input {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-right {
+  margin: 0 5px;
+}
+
+.calendar-element {
+  position: absolute;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background-color: white; /* Ensure background color is set */
+  padding: 10px;
+}
+
+/* Ensure these are imported and used */
+.react-date-range {
+  width: 100%;
+}
+
+.react-date-range .rdrCalendarWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-date-range .rdrDateDisplayWrapper {
+  display: none; /* Hide the range display if not needed */
+}
+
+.react-date-range .rdrMonthAndYearWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rdrMonthPicker,
+.rdrYearPicker {
+  flex: 1;
+}
+.react-date-range .rdrMonthAndYearPickers select {
+  padding: 5px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.rdrMonthAndYearPickers select {
+  width: 100%;
+  padding: 0px;
+}
+
+.date-picker__datePicker {
+  display: flex;
+  width: 322px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.date-picker__datePicker-left,
+.date-picker__datePicker-right {
+  display: flex;
+  width: 150px;
+  height: 40px;
+  padding: 8px 12px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 6px;
+  background: #fff;
+}
+.date-picker__datePicker-left:hover,
+.date-picker__datePicker-right:hover {
+  cursor: pointer;
+}
+
+.date-input {
+  width: 100%;
+  color: var(--gray-gray-400);
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 131.25% */
+  border: 0;
+  outline: 0;
+}
+.date-input__active {
+  color: var(--blue-primary-500);
+}
+.calendar-element {
+  top: 65px;
+  max-width: 322px;
+  border: 0;
+  padding: 0;
+}
+.rdrDayNumber {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rdrDayNumber span {
+  color: var(--gray-gray-500);
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  font-weight: 500;
+}
+.rdrDayNumber:hover {
+}
+
+.rdrWeekDays {
+  color: var(--blue-primary-500, #0054a6);
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  font-weight: 500;
+}
+.rdrSelected {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #0054a6;
+}
+.rdrDays .rdrDayHovered {
+  border: 0;
+  border-radius: 4px;
+  background: var(--gray-gray-100);
+  outline: 0;
+}
+.rdrDays .rdrDayStartPreview,
+.rdrDays .rdrDayEndPreview {
+  border: 0;
+}
+.rdrMonthPicker select,
+.rdrYearPicker select,
+.rdrMonthPicker option,
+.rdrYearPicker option {
+  color: var(--blue-primary-600);
+  font-size: 16px;
+  font-weight: 700;
+}

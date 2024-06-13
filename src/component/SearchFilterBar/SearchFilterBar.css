@@ -150,7 +150,6 @@
 }
 
 .filter-menu {
-  margin: 0 auto;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -163,6 +162,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  z-index: 20;
 }
 
 .filter-menu p {
@@ -218,5 +218,96 @@
     border-radius: 4px;
     cursor: pointer;
     background: var(--White, #fff);
+  }
+  .filter-menu__content {
+    height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .filter-menu__content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .menu-category__header {
+    color: var(--blue-primary-500);
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .filter-menu__category {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .menu-category__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .menu-category__item {
+    display: flex;
+    height: 40px;
+    padding: 20px;
+    align-items: center;
+    gap: 4px;
+    flex: 1 1 48%;
+    border-radius: 8px;
+    border: 1px solid var(--blue-primary-300);
+    background: #fff;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue-primary-300);
+  }
+  .menu-category__item path {
+    fill: rgb(0, 84, 166);
+    stroke: rgb(0, 84, 166);
+  }
+  .menu-category__active {
+    background: var(--blue-primary-500);
+    color: var(--white, #fff);
+  }
+  .menu-category__active path {
+    fill: var(--white, #fff);
+    stroke: var(--white, #fff);
+  }
+  .menu-category__item:hover,
+  .close-filter-btn:hover {
+    cursor: pointer;
+  }
+  .menu-date__picker {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-date_item {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-date_item span {
+    color: var(--gray-gray-400);
+
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .menu-date__picker {
+    position: relative;
+  }
+
+  .date-picker__datePicker .date-picker__datePicker-left,
+  .date-picker__datePicker .date-picker__datePicker-right {
+    border-radius: 6px;
+    border: 1px solid var(--blue-primary-500);
+    background: var(--white, #fff);
+    width: 135px;
   }
 }

@@ -4,13 +4,15 @@ import {
   ArroowRight,
   ArrowLeft,
   ArrowRight,
-  Calendar,
+  CalendarIcon,
   DownLoadIcon,
   IconX,
   Search,
 } from "../../assets/Icon";
 import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
+import { format } from "date-fns";
+import DateRangePicker from "../DateRangePicker/DateRangePicker";
 
 interface Document {
   id: number;
@@ -26,16 +28,21 @@ const DocumentTable: React.FC = () => {
   const [displayCount, setDisplayCount] = useState<number>(10);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [searchKeyword, setSearchKeyword] = useState<string>("");
-  const [startDate, setStartDate] = useState<string>("");
-  const [endDate, setEndDate] = useState<string>("");
+  const [startDate, setStartDate] = useState<string>("2018-01-01");
+  const today = format(new Date(), "yyyy-MM-dd");
+  const [endDate, setEndDate] = useState<string>(today);
   const [filteredDocuments, setFilteredDocuments] = useState<Document[]>([]);
 
   useEffect(() => {
     filterDocuments();
   }, [searchKeyword, startDate, endDate, documentTable]);
+
   useEffect(() => {
     setCurrentPage(1);
   }, [displayCount]);
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filteredDocuments]);
   const filterDocuments = () => {
     let filtered = documentTable;
 
@@ -93,12 +100,23 @@ const DocumentTable: React.FC = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="document-loading">Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="document-error">Error: {error}</div>;
   }
+
+  const handleDateChange = ({
+    startDate,
+    endDate,
+  }: {
+    startDate: Date;
+    endDate: Date;
+  }) => {
+    setStartDate(format(startDate, "yyyy-MM-dd"));
+    setEndDate(format(endDate, "yyyy-MM-dd"));
+  };
 
   return (
     <div className="document-table">
@@ -106,27 +124,11 @@ const DocumentTable: React.FC = () => {
         <div className="document-table__header">
           <div className="document-table__date">
             <label htmlFor="start-date">Ngày tạo</label>
-            <div className="document-table__datePicker">
-              <div className="document-table__datePicker-left">
-                <input
-                  type="date"
-                  id="start-date"
-                  value={startDate}
-                  onChange={handleStartDateChange}
-                />
-                {Calendar}
-              </div>
-              <div>{ArroowRight}</div>
-              <div className="document-table__datePicker-right">
-                <input
-                  type="date"
-                  id="end-date"
-                  value={endDate}
-                  onChange={handleEndDateChange}
-                />
-                {Calendar}
-              </div>
-            </div>
+            <DateRangePicker
+              startDate={new Date(startDate)}
+              endDate={new Date(endDate)}
+              onDateChange={handleDateChange}
+            />
           </div>
           <div className="document-table__search">
             <label htmlFor="search-keyword">Từ khóa</label>

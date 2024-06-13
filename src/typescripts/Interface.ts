@@ -45,6 +45,7 @@ export interface Blog {
   date: string;
   views: number;
   content: Content;
+  file: string;
 }
 export interface Slide {
   background: string;
@@ -72,10 +73,12 @@ export interface SearchFilterBarProps {
   sortBy: string;
   startDate: string;
   endDate: string;
+  category: string;
   onSearchQueryChange: (query: string) => void;
   onSortByChange: (sortBy: string) => void;
   onStartDateChange: (date: string) => void;
   onEndDateChange: (date: string) => void;
+  setCategory: (category: string) => void;
 }
 
 export interface Reports {

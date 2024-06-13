@@ -80,4 +80,7 @@
     font-size: 10px;
     line-height: 12px;
   }
+  .document-card__hover {
+    font-size: 12px;
+  }
 }

@@ -85,7 +85,7 @@ const Topics: React.FC = () => {
           </li>
         </ul>
       </div>
-      <MainBlogs category={category} />
+      <MainBlogs category={category} setCategory={setCategory} />
     </div>
   );
 };

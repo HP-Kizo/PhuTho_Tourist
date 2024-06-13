@@ -19,6 +19,7 @@ const ArticleSection: React.FC = () => {
   const { blogs, slides, loading, error } = useSelector(
     (state: RootState) => state.blogs
   );
+
   useEffect(() => {
     dispatch(fetchBlogs());
   }, [dispatch]);
@@ -33,6 +34,14 @@ const ArticleSection: React.FC = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
     <article className="article">
       <div className="wrap__polygon">
@@ -45,10 +54,17 @@ const ArticleSection: React.FC = () => {
             <div className="sliders">
               <div
                 className="slider__image"
-                style={{
-                  background: slides[currentSlide].background,
+                onClick={() => {
+                  navigate(`${slides[currentSlide].id}`, {
+                    state: { post: slides[currentSlide] },
+                  });
                 }}
-              ></div>
+                style={{
+                  background: `linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(${slides[currentSlide].image}) lightgray 50% / cover no-repeat`,
+                }}
+              >
+                <div className="slider__hover-text">Click để xem</div>
+              </div>
               <div className="slider__main">
                 <div className="slider__content">
                   <h2 className="slider__content-title">
