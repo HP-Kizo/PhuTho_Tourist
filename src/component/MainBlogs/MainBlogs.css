@@ -4,6 +4,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+  overflow: hidden;
 }
 .main__blogs-content {
   display: inline-flex;
@@ -32,6 +33,7 @@
 @media screen and (max-width: 1248px) {
   .main__blogs {
     margin-bottom: 40px;
+    gap: 24px;
   }
   .main__blogs-content {
     width: 90vw;

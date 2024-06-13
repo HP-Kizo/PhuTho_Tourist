@@ -92,7 +92,14 @@ const SearchFilterBar: React.FC<SearchFilterBarProps> = ({
   };
 
   return (
-    <div className="search-filter-bar" ref={searchRef}>
+    <div
+      className={
+        isFilterVisible
+          ? "search-filter-bar search-filter-bar__margin"
+          : "search-filter-bar"
+      }
+      ref={searchRef}
+    >
       <div className="search-filter__left">
         <div className="wrap__search">
           <div className="search__left">

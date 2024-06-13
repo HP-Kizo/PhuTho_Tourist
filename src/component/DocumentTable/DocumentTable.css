@@ -237,7 +237,9 @@
 }
 .document-table__footer {
   display: flex;
-  width: 1125px;
+  flex-wrap: wrap-reverse;
+  gap: 20px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   margin-top: 32px;
@@ -500,5 +502,8 @@ option {
   }
   .document-table {
     margin: 0px auto;
+  }
+  .document-table__footer {
+    justify-content: center;
   }
 }

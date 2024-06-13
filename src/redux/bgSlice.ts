@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Blog } from "../typescripts/Interface";
 interface BGState {
   backgroundUrl: string;
-  images: string[];
+  images: Blog[];
   loading: boolean;
   error: string | null;
 }

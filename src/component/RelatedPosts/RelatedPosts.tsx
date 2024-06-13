@@ -34,7 +34,14 @@ const RelatedPosts: React.FC = () => {
               navigate(`/blogs/${post.id}`, { state: { post } });
             }}
           >
-            <img src={post.image} alt={post.title} className="related-image" />
+            <div className="related__wrap-image">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="related-image"
+              />
+              <div className="blog-card__hover-text">Click để xem</div>
+            </div>
             <div className="related-content">
               <div className="related-position">
                 <span className="related-author">{post.author}</span>

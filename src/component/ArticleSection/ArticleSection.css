@@ -219,6 +219,9 @@
   .slider__content .slider__content-description {
     display: none;
   }
+  .slider__hover-text {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 886px) {
   .article {

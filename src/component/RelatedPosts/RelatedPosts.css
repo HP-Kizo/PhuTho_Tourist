@@ -34,6 +34,12 @@
 .related-posts__item :hover {
   cursor: pointer;
 }
+.related__wrap-image {
+  position: relative;
+}
+.related__wrap-image:hover .blog-card__hover-text {
+  opacity: 1;
+}
 .related-image {
   width: 100%;
   height: 146px;

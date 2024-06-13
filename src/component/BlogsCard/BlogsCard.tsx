@@ -23,7 +23,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
     >
       <div className="blog-card__header">
         <img src={blog.image} alt="" className="blog-card__image" />
-        <div className="slider__hover-text">Click để xem</div>
+        <div className="blog-card__hover-text">Click để xem</div>
       </div>
       <div className="blog-card__content">
         <div className="blog-card__position">

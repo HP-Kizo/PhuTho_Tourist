@@ -60,9 +60,19 @@
   text-align: center;
 }
 
+@media only screen and (max-width: 1200px) {
+  .video-background {
+    height: 858px;
+  }
+}
+
 @media only screen and (max-width: 605px) {
   .video-background {
-    height: 100vh;
-    min-height: 758px;
+    height: 758px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .video-background {
+    height: 658px;
   }
 }
