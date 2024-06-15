@@ -29,7 +29,8 @@ const DocumentTable: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [searchKeyword, setSearchKeyword] = useState<string>("");
   const [startDate, setStartDate] = useState<string>("2018-01-01");
-  const today = format(new Date(), "yyyy-MM-dd");
+  const today: string = format(new Date(), "yyyy-MM-dd");
+
   const [endDate, setEndDate] = useState<string>(today);
   const [filteredDocuments, setFilteredDocuments] = useState<Document[]>([]);
 
@@ -44,33 +45,36 @@ const DocumentTable: React.FC = () => {
     setCurrentPage(1);
   }, [filteredDocuments]);
   const filterDocuments = () => {
-    let filtered = documentTable;
+    let filtered: Document[] = documentTable;
 
     if (searchKeyword) {
-      filtered = filtered.filter((doc) =>
+      filtered = filtered.filter((doc: Document) =>
         doc.name.toLowerCase().includes(searchKeyword.toLowerCase())
       );
     }
 
     if (startDate) {
       filtered = filtered.filter(
-        (doc) => new Date(doc.creationDate) >= new Date(startDate)
+        (doc: Document) => new Date(doc.creationDate) >= new Date(startDate)
       );
     }
 
     if (endDate) {
       filtered = filtered.filter(
-        (doc) => new Date(doc.creationDate) <= new Date(endDate)
+        (doc: Document) => new Date(doc.creationDate) <= new Date(endDate)
       );
     }
 
     setFilteredDocuments(filtered);
   };
 
-  const totalPages = Math.ceil(filteredDocuments.length / displayCount);
-  const startIndex = (currentPage - 1) * displayCount;
-  const endIndex = startIndex + displayCount;
-  const paginatedDocuments = filteredDocuments.slice(startIndex, endIndex);
+  const totalPages: number = Math.ceil(filteredDocuments.length / displayCount);
+  const startIndex: number = (currentPage - 1) * displayCount;
+  const endIndex: number = startIndex + displayCount;
+  const paginatedDocuments: Document[] = filteredDocuments.slice(
+    startIndex,
+    endIndex
+  );
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchKeyword(e.target.value);
@@ -162,7 +166,7 @@ const DocumentTable: React.FC = () => {
             </tr>
           </thead>
           <tbody className="document-table__tbody">
-            {paginatedDocuments.map((document, index) => (
+            {paginatedDocuments.map((document: Document, index: number) => (
               <tr key={document.id}>
                 <td>{startIndex + index + 1}</td>
                 <td>
@@ -207,8 +211,8 @@ const DocumentTable: React.FC = () => {
               {ArrowLeft}
             </div>
             <div className="document-table__numberPage">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (page) => (
+              {Array.from({ length: totalPages }, (_, i: number) => i + 1).map(
+                (page: number) => (
                   <div
                     key={page}
                     className={`pagination-btn ${

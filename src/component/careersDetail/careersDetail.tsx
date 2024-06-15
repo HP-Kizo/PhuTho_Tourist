@@ -29,7 +29,6 @@ const CareersDetail: React.FC = () => {
   }, [params]);
   const location = useLocation();
   const jobDetails = location.state?.job;
-  console.log(!jobDetails);
 
   function formatDateToRelativeWeeks(date: string): string {
     const rtf = new Intl.RelativeTimeFormat("vi", {

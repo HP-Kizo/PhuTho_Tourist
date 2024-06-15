@@ -4,11 +4,12 @@ import { ElipseOff, ElipseOn } from "../../assets/Icon";
 import { useNavigate, useParams } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
+import { Blog } from "../../typescripts/Interface";
 
 const RelatedPosts: React.FC = () => {
   const navigate = useNavigate();
   const params = useParams<{ id: string }>();
-  const postId = parseInt(params.id || "", 10);
+  const postId: number = parseInt(params.id || "", 10);
   const { blogs, loading, error } = useSelector(
     (state: RootState) => state.blogs
   );
@@ -21,12 +22,14 @@ const RelatedPosts: React.FC = () => {
     return <div>Error: {error}</div>;
   }
 
-  const relatedPosts = blogs.filter((post) => post.id !== postId).slice(0, 4);
+  const relatedPosts: Blog[] = blogs
+    .filter((post: Blog) => post.id !== postId)
+    .slice(0, 4);
 
   return (
     <div className="related-posts">
       <div className="related-posts__list">
-        {relatedPosts.map((post) => (
+        {relatedPosts.map((post: Blog) => (
           <div
             key={post.id}
             className="related-posts__item"

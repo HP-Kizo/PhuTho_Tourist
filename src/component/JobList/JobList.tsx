@@ -40,7 +40,7 @@ const JobList: React.FC<JobListProps> = ({ jobs, loading, error }) => {
   }
   return (
     <div className="jobList">
-      {jobs.map((job) => (
+      {jobs.map((job: Job) => (
         <div key={job.id} className="jobList__item">
           <div className="jobList__position">
             <div className="jobList__position-left">{LogoS}</div>

@@ -34,7 +34,7 @@ const MainBlogs: React.FC<{
   const [itemsPerPage, setItemsPerPage] = useState<number>(12);
 
   const documentMainRef = useRef<HTMLDivElement>(null);
-  const scrollToDocumentMain = () => {
+  const scrollToDocumentMain = (): void => {
     if (documentMainRef.current) {
       documentMainRef.current.scrollIntoView({ behavior: "smooth" });
     }
@@ -52,7 +52,7 @@ const MainBlogs: React.FC<{
     setIsInitialRender(false);
   }, [currentPage]);
 
-  const filteredBlogs = blogs.filter((blog) => {
+  const filteredBlogs: Blog[] = blogs.filter((blog: Blog) => {
     const matchesSearchQuery =
       blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       blog.description.toLowerCase().includes(searchQuery.toLowerCase());
@@ -68,7 +68,7 @@ const MainBlogs: React.FC<{
     return matchesSearchQuery && matchesCategory && matchesDateRange;
   });
 
-  const sortedBlogs = filteredBlogs.sort((a, b) => {
+  const sortedBlogs = filteredBlogs.sort((a: Blog, b: Blog) => {
     if (sortBy === "A đến Z") {
       return a.title.localeCompare(b.title);
     } else {
@@ -76,7 +76,7 @@ const MainBlogs: React.FC<{
     }
   });
 
-  const totalPages = Math.ceil(sortedBlogs.length / itemsPerPage);
+  const totalPages: number = Math.ceil(sortedBlogs.length / itemsPerPage);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -104,7 +104,7 @@ const MainBlogs: React.FC<{
                 (currentPage - 1) * itemsPerPage,
                 currentPage * itemsPerPage
               )
-              .map((blog) => {
+              .map((blog: Blog) => {
                 return <BlogCard key={blog.id} blog={blog} />;
               })}
         </div>

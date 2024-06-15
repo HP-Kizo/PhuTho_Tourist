@@ -11,9 +11,13 @@ const PostsContent = () => {
       year: "numeric",
     };
 
-    const dateFormatter = new Intl.DateTimeFormat("vi-VN", options);
+    const dateFormatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(
+      "vi-VN",
+      options
+    );
+    console.log(dateFormatter);
 
-    const targetDate = new Date(date);
+    const targetDate: Date = new Date(date);
 
     return dateFormatter.format(targetDate);
   }

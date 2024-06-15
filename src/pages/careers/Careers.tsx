@@ -10,6 +10,7 @@ import "./Careers.css";
 import SearchBar from "../../component/SearchBar/SearchBar";
 import JobList from "../../component/JobList/JobList";
 import Pagination from "../../component/Pagination/Pagination";
+import { Job } from "../../typescripts/Interface";
 
 const Careers: React.FC = () => {
   const [searchKeyword, setSearchKeyword] = useState<string>("");
@@ -23,7 +24,7 @@ const Careers: React.FC = () => {
   const careersRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState<number>(0);
 
-  const updateWidth = () => {
+  const updateWidth = (): void => {
     if (careersRef.current) {
       setWidth(careersRef.current.offsetWidth);
     }
@@ -62,27 +63,27 @@ const Careers: React.FC = () => {
     setSearchKeyword(e.target.value);
   };
 
-  const handleFilterChange = (field: string, value: string) => {
+  const handleFilterChange = (field: string, value: string): void => {
     if (field === "field") setSelectedField(value);
     if (field === "form") setSelectedForm(value);
     if (field === "place") setSelectedPlace(value);
   };
 
-  const filteredJobs = jobs
-    .filter((job) =>
+  const filteredJobs: Job[] = jobs
+    .filter((job: Job) =>
       job.title.toLowerCase().includes(searchKeyword.toLowerCase())
     )
-    .filter((job) => (selectedField ? job.field === selectedField : true))
-    .filter((job) => (selectedForm ? job.form === selectedForm : true))
-    .filter((job) => (selectedPlace ? job.place === selectedPlace : true));
+    .filter((job: Job) => (selectedField ? job.field === selectedField : true))
+    .filter((job: Job) => (selectedForm ? job.form === selectedForm : true))
+    .filter((job: Job) => (selectedPlace ? job.place === selectedPlace : true));
 
-  const totalPages = Math.ceil(filteredJobs.length / itemsPerPage);
-  const paginatedJobs = filteredJobs.slice(
+  const totalPages: number = Math.ceil(filteredJobs.length / itemsPerPage);
+  const paginatedJobs: Job[] = filteredJobs.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = (page: number): void => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
     }

@@ -6,6 +6,7 @@ import { fetchBlogs } from "../../redux/blogAction";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Blog } from "../../typescripts/Interface";
 
 const BlogSection: React.FC = () => {
   const navigate = useNavigate();
@@ -13,7 +14,6 @@ const BlogSection: React.FC = () => {
   const { blogs, slides, loading, error } = useSelector(
     (state: RootState) => state.blogs
   );
-  console.log(slides);
 
   useEffect(() => {
     dispatch(fetchBlogs());
@@ -36,7 +36,7 @@ const BlogSection: React.FC = () => {
         {!loading &&
           blogs
             .slice(0, 3)
-            .map((card, index) => <Card key={index} {...card} />)}
+            .map((card: Blog, index: number) => <Card key={index} {...card} />)}
       </div>
       <div className="blog-section__footer">
         <button

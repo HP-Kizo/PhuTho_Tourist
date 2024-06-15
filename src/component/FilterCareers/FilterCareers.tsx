@@ -42,14 +42,14 @@ const FilterCareers: React.FC<FilterCareersProps> = ({
     }
   };
   const searchRef = useRef<HTMLDivElement>(null);
-  const scrollToSearch = () => {
+  const scrollToSearch = (): void => {
     if (searchRef.current) {
       searchRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const [isFilterVisible, setIsFilterVisible] = useState<boolean>(false);
-
+  const [recentSearches, setRecentSearches] = useState<string[]>([]);
   useEffect(() => {
     if (isFilterVisible) {
       scrollToSearch();

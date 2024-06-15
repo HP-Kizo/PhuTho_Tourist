@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { ImageData } from "../../typescripts/Interface";
+import { Blog, ImageData } from "../../typescripts/Interface";
 import { useNavigate } from "react-router-dom";
 
 const Carousel = () => {
@@ -29,7 +29,7 @@ const Carousel = () => {
     <div className="carousel">
       <div className="carousel__wrap">
         {!loading &&
-          images.map((img, index) => (
+          images.map((img: Blog, index: number) => (
             <div
               key={index}
               className="carousel__item"

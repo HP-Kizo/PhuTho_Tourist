@@ -16,7 +16,7 @@ const Posts: React.FC = () => {
     }
   };
   const [width, setWidth] = useState<number>(0);
-  const updateWidth = () => {
+  const updateWidth = (): void => {
     if (postRef.current) {
       setWidth(postRef.current.offsetWidth);
     }

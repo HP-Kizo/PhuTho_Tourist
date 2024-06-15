@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "./ArticleSection.css";
 import {
   ActiveIcon,
@@ -13,6 +13,13 @@ import { RootState, useAppDispatch } from "../../redux/store";
 import { useSelector } from "react-redux";
 import { fetchBlogs } from "../../redux/blogAction";
 
+interface Slide {
+  id: string;
+  image: string;
+  title: string;
+  description: string;
+}
+
 const ArticleSection: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -26,17 +33,23 @@ const ArticleSection: React.FC = () => {
 
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
-  const handlerPrev = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  const handlerPrev = (): void => {
+    setCurrentSlide((prev: number) =>
+      prev === 0 ? slides.length - 1 : prev - 1
+    );
   };
 
-  const handlerNext = () => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  const handlerNext = (): void => {
+    setCurrentSlide((prev: number) =>
+      prev === slides.length - 1 ? 0 : prev + 1
+    );
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+      setCurrentSlide((prev: number) =>
+        prev === slides.length - 1 ? 0 : prev + 1
+      );
     }, 3000);
 
     return () => clearInterval(interval);
@@ -81,7 +94,7 @@ const ArticleSection: React.FC = () => {
               </div>
               <div className="slider__icons">
                 {!loading &&
-                  slides.map((_, index) => (
+                  slides.map((_, index: number) => (
                     <button
                       key={index}
                       className={currentSlide === index ? "active" : ""}

@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { RootState, useAppDispatch } from "../../redux/store";
 import { useSelector } from "react-redux";
 import { fetchDocuments } from "../../redux/documentAction";
+import { Reports } from "../../typescripts/Interface";
 
 interface scrollToDocumentTableProps {
   scrollToDocumentTable: () => void;
@@ -26,7 +27,6 @@ const ArticleDocuments: React.FC<scrollToDocumentTableProps> = ({
     (state: RootState) => state.documents
   );
 
-
   useEffect(() => {
     dispatch(fetchDocuments());
   }, [dispatch]);
@@ -39,7 +39,7 @@ const ArticleDocuments: React.FC<scrollToDocumentTableProps> = ({
       </div>
       <div className="wrap__document-card">
         {!loading &&
-          reports.map((report) => (
+          reports.map((report: Reports) => (
             <DocumentCard key={report.id} report={report} />
           ))}
       </div>

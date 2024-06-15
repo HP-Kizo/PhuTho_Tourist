@@ -43,7 +43,7 @@ const JobDetails: React.FC<JobDetailsProps> = ({ jobDetails }) => {
               <td className="job-details__label">Mô tả công việc</td>
               <td className="job-details__value">
                 <ul className="job-details__desc">
-                  {jobDetails.description.map((desc, index) => (
+                  {jobDetails.description.map((desc: string, index: number) => (
                     <li key={index}>{desc}</li>
                   ))}
                 </ul>
@@ -61,7 +61,7 @@ const JobDetails: React.FC<JobDetailsProps> = ({ jobDetails }) => {
               <td className="job-details__label">Quyền lợi</td>
               <td className="job-details__value">
                 <ul className="job-details__desc">
-                  {jobDetails.benefits.map((benefit, index) => (
+                  {jobDetails.benefits.map((benefit: string, index: number) => (
                     <li key={index}>{benefit}</li>
                   ))}
                 </ul>
@@ -71,9 +71,11 @@ const JobDetails: React.FC<JobDetailsProps> = ({ jobDetails }) => {
               <td className="job-details__label">Yêu cầu</td>
               <td className="job-details__value">
                 <ul className="job-details__desc">
-                  {jobDetails.requirements.map((requirement, index) => (
-                    <li key={index}>{requirement}</li>
-                  ))}
+                  {jobDetails.requirements.map(
+                    (requirement: string, index: number) => (
+                      <li key={index}>{requirement}</li>
+                    )
+                  )}
                 </ul>
               </td>
             </tr>
@@ -89,7 +91,7 @@ const JobDetails: React.FC<JobDetailsProps> = ({ jobDetails }) => {
               <td className="job-details__label">Hồ sơ gồm</td>
               <td className="job-details__value">
                 <ul className="job-details__desc">
-                  {jobDetails.includes.map((include, index) => (
+                  {jobDetails.includes.map((include: string, index: number) => (
                     <li key={index}>{include}</li>
                   ))}
                 </ul>

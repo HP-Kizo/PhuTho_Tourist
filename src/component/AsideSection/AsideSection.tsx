@@ -6,29 +6,38 @@ import { useNavigate } from "react-router-dom";
 import { RootState, useAppDispatch } from "../../redux/store";
 import { useSelector } from "react-redux";
 import { fetchBlogs } from "../../redux/blogAction";
+
 const AsideSection: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { blogs, slides, loading, error } = useSelector(
     (state: RootState) => state.blogs
   );
+
   useEffect(() => {
     dispatch(fetchBlogs());
   }, [dispatch]);
+
   function roundUpToNearestThousand(num: number): number {
     return Math.ceil(num / 1000);
   }
+
   function parseDate(dateString: string): Date {
     const [day, month, year] = dateString.split("-");
     return new Date(Number(year), Number(month) - 1, Number(day));
   }
-  const sortedBlogs = blogs
+
+  const sortedBlogs: Blog[] = blogs
     .slice()
-    .sort((a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime())
+    .sort(
+      (a: Blog, b: Blog) =>
+        parseDate(b.date).getTime() - parseDate(a.date).getTime()
+    )
     .slice(0, 10);
+
   return (
     <ul className="post__list">
-      {sortedBlogs.map((post) => (
+      {sortedBlogs.map((post: Blog) => (
         <li
           key={post.id}
           className="post"

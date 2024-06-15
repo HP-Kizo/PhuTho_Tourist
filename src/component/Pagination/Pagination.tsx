@@ -14,13 +14,13 @@ const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   onPageChange,
 }) => {
-  const pageNumbers = [];
+  const pageNumbers: number[] = [];
 
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
 
-  const renderPageNumbers = pageNumbers.map((number, index) => {
+  const renderPageNumbers = pageNumbers.map((number: number, index: number) => {
     if (
       number === 1 ||
       number === pageNumbers.length ||

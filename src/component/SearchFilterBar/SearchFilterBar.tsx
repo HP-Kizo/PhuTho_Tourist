@@ -43,12 +43,13 @@ const SearchFilterBar: React.FC<SearchFilterBarProps> = ({
     }
   };
 
-  const handleSortChange = () => {
+  const handleSortChange = (): void => {
     onSortByChange(sortBy === "A đến Z" ? "Z đến A" : "A đến Z");
   };
 
   useEffect(() => {
     const storedSearches = localStorage.getItem("recentSearches");
+
     if (storedSearches) {
       setRecentSearches(JSON.parse(storedSearches));
     }
@@ -58,13 +59,13 @@ const SearchFilterBar: React.FC<SearchFilterBarProps> = ({
     localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
   }, [recentSearches]);
 
-  const handleMenuChange = () => {
+  const handleMenuChange = (): void => {
     setIsFilterVisible(!isFilterVisible);
   };
 
   // Xử lý khi mở thanh Menu
   const searchRef = useRef<HTMLDivElement>(null);
-  const scrollToSearch = () => {
+  const scrollToSearch = (): void => {
     if (searchRef.current) {
       searchRef.current.scrollIntoView({ behavior: "smooth" });
     }
@@ -78,7 +79,6 @@ const SearchFilterBar: React.FC<SearchFilterBarProps> = ({
       document.body.style.overflow = "auto";
     }
   }, [isFilterVisible]);
-  console.log(startDate, endDate);
 
   const handleDateChange = ({
     startDate,
