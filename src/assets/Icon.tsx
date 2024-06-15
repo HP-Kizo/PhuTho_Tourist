@@ -1,4 +1,4 @@
-export const Logo = (
+export const Logo: JSX.Element = (
   <svg
     width="113"
     height="72"
@@ -30,7 +30,7 @@ export const Logo = (
     </g>
   </svg>
 );
-export const ElipseOn = (
+export const ElipseOn: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="8"
@@ -42,7 +42,7 @@ export const ElipseOn = (
   </svg>
 );
 
-export const ElipseOff = (
+export const ElipseOff: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="3"
@@ -53,7 +53,7 @@ export const ElipseOff = (
     <circle cx="1.5" cy="1.5" r="1.5" fill="#858585" />
   </svg>
 );
-export const Copyright = (
+export const Copyright: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -77,7 +77,7 @@ export const Copyright = (
     />
   </svg>
 );
-export const ButtonDown = (
+export const ButtonDown: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="23"
@@ -102,7 +102,7 @@ export const ButtonDown = (
   </svg>
 );
 
-export const MapPin = (
+export const MapPin: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -117,7 +117,7 @@ export const MapPin = (
   </svg>
 );
 
-export const Phone = (
+export const Phone: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -132,7 +132,7 @@ export const Phone = (
   </svg>
 );
 
-export const Mail = (
+export const Mail: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -149,7 +149,7 @@ export const Mail = (
   </svg>
 );
 
-export const Facebook = (
+export const Facebook: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -166,7 +166,7 @@ export const Facebook = (
   </svg>
 );
 
-export const ElipseWhite = (
+export const ElipseWhite: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="6"
@@ -178,7 +178,7 @@ export const ElipseWhite = (
   </svg>
 );
 
-export const LogoL = (
+export const LogoL: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="142"
@@ -205,7 +205,7 @@ export const LogoL = (
   </svg>
 );
 
-export const Polygon = (
+export const Polygon: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="382"
@@ -291,7 +291,7 @@ export const Polygon = (
   </svg>
 );
 
-export const PrevIcon = (
+export const PrevIcon: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="28"
@@ -310,7 +310,7 @@ export const PrevIcon = (
   </svg>
 );
 
-export const NextIcon = (
+export const NextIcon: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="28"
@@ -328,7 +328,7 @@ export const NextIcon = (
     />
   </svg>
 );
-export const ActiveIcon = (
+export const ActiveIcon: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="28"
@@ -357,7 +357,7 @@ export const ActiveIcon = (
   </svg>
 );
 
-export const InActiveIcon = (
+export const InActiveIcon: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -398,7 +398,7 @@ export const InActiveIcon = (
   </svg>
 );
 
-export const Introduce = (
+export const Introduce: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -447,7 +447,7 @@ export const Introduce = (
   </svg>
 );
 
-export const News = (
+export const News: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -461,7 +461,7 @@ export const News = (
     />
   </svg>
 );
-export const Event = (
+export const Event: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -476,7 +476,7 @@ export const Event = (
   </svg>
 );
 
-export const Notification = (
+export const Notification: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -491,7 +491,7 @@ export const Notification = (
   </svg>
 );
 
-export const Folder = (
+export const Folder: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -505,7 +505,7 @@ export const Folder = (
     />
   </svg>
 );
-export const Activity = (
+export const Activity: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -520,7 +520,7 @@ export const Activity = (
   </svg>
 );
 
-export const Search = (
+export const Search: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -543,7 +543,7 @@ export const Search = (
   </svg>
 );
 
-export const CalendarIcon = (
+export const CalendarIcon: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -558,7 +558,7 @@ export const CalendarIcon = (
   </svg>
 );
 
-export const ArrowDownUp = (
+export const ArrowDownUp: JSX.Element = (
   <svg
     className="arrowDownUp"
     xmlns="http://www.w3.org/2000/svg"
@@ -577,7 +577,7 @@ export const ArrowDownUp = (
   </svg>
 );
 
-export const Vector = (
+export const Vector: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="6"
@@ -592,7 +592,7 @@ export const Vector = (
   </svg>
 );
 
-export const DocumentIcon = (
+export const DocumentIcon: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="104"
@@ -625,7 +625,7 @@ export const DocumentIcon = (
   </svg>
 );
 
-export const ArroowRight = (
+export const ArroowRight: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="6"
@@ -640,7 +640,7 @@ export const ArroowRight = (
   </svg>
 );
 
-export const DownLoadIcon = (
+export const DownLoadIcon: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -655,7 +655,7 @@ export const DownLoadIcon = (
   </svg>
 );
 
-export const ArrowLeft = (
+export const ArrowLeft: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -674,7 +674,7 @@ export const ArrowLeft = (
   </svg>
 );
 
-export const ArrowRight = (
+export const ArrowRight: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -693,7 +693,7 @@ export const ArrowRight = (
   </svg>
 );
 
-export const DamSenPark = (
+export const DamSenPark: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="133"
@@ -866,7 +866,7 @@ export const DamSenPark = (
   </svg>
 );
 
-export const Map = (
+export const Map: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -881,7 +881,7 @@ export const Map = (
   </svg>
 );
 
-export const File = (
+export const File: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -896,7 +896,7 @@ export const File = (
   </svg>
 );
 
-export const PrevIconSmall = (
+export const PrevIconSmall: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="21"
@@ -915,7 +915,7 @@ export const PrevIconSmall = (
   </svg>
 );
 
-export const NextIconSmall = (
+export const NextIconSmall: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="21"
@@ -934,13 +934,13 @@ export const NextIconSmall = (
   </svg>
 );
 
-export const IconX = (
+export const IconX: JSX.Element = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
     <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
   </svg>
 );
 
-export const VectorBlue = (
+export const VectorBlue: JSX.Element = (
   <svg
     className="vector__blue"
     xmlns="http://www.w3.org/2000/svg"
@@ -953,7 +953,7 @@ export const VectorBlue = (
   </svg>
 );
 
-export const Bag = (
+export const Bag: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -972,7 +972,7 @@ export const Bag = (
   </svg>
 );
 
-export const TheNV = (
+export const TheNV: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="28"
@@ -988,7 +988,7 @@ export const TheNV = (
     />
   </svg>
 );
-export const MapPinBlue = (
+export const MapPinBlue: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -1002,7 +1002,7 @@ export const MapPinBlue = (
     />
   </svg>
 );
-export const LogoS = (
+export const LogoS: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="36"
@@ -1174,7 +1174,7 @@ export const LogoS = (
     </defs>
   </svg>
 );
-export const MapS = (
+export const MapS: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -1188,7 +1188,7 @@ export const MapS = (
     />
   </svg>
 );
-export const ClockS = (
+export const ClockS: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -1202,7 +1202,7 @@ export const ClockS = (
     />
   </svg>
 );
-export const Menu = (
+export const Menu: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -1220,7 +1220,7 @@ export const Menu = (
   </svg>
 );
 
-export const LogoM = (
+export const LogoM: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="49"
@@ -1248,7 +1248,7 @@ export const LogoM = (
   </svg>
 );
 
-export const XMark = (
+export const XMark: JSX.Element = (
   <svg
     width="18"
     height="18"
@@ -1269,7 +1269,7 @@ export const XMark = (
   </svg>
 );
 
-export const Topics = (
+export const Topics: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -1304,7 +1304,7 @@ export const Topics = (
   </svg>
 );
 
-export const Menu_S = (
+export const Menu_S: JSX.Element = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
